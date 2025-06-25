@@ -11,9 +11,17 @@ public static class XluaManager {
         get {
             if (_luaenv == null) {
                 _luaenv = new LuaEnv();
+                _luaenv.AddBuildin("lssl", XLua.LuaDLL.Lua.LoadLuaSsl);
                 _luaenv.AddBuildin("luapb", XLua.LuaDLL.Lua.LoadLuaPb);
                 _luaenv.AddBuildin("ljson", XLua.LuaDLL.Lua.LoadLuaJson);
                 _luaenv.AddBuildin("luabus", XLua.LuaDLL.Lua.LoadLuaBus);
+                _luaenv.AddBuildin("lualog", XLua.LuaDLL.Lua.LoadLuaLog);
+                _luaenv.AddBuildin("lsmdb", XLua.LuaDLL.Lua.LoadLuaSmdb);
+                _luaenv.AddBuildin("lcodec", XLua.LuaDLL.Lua.LoadLuaCodec);
+                _luaenv.AddBuildin("lstdfs", XLua.LuaDLL.Lua.LoadLuaStdfs);
+                _luaenv.AddBuildin("ltimer", XLua.LuaDLL.Lua.LoadLuaTimer);
+                _luaenv.AddBuildin("lminiz", XLua.LuaDLL.Lua.LoadLuaMiniz);
+                _luaenv.AddBuildin("lworker", XLua.LuaDLL.Lua.LoadLuaWorker);
                 _luaenv.AddLoader(luaLoader);
                 //执行启动脚本
                 _luaenv.DoString("require 'main'");
