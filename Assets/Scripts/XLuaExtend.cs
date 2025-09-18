@@ -6,13 +6,6 @@ namespace XLua.LuaDLL {
 
     public partial class Lua {
         [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int luaopen_lssl(System.IntPtr L);
-        [MonoPInvokeCallback(typeof(LuaDLL.lua_CSFunction))]
-        public static int LoadLuaSsl(System.IntPtr L) {
-            return luaopen_lssl(L);
-        }
-
-        [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
         public static extern int luaopen_luapb(System.IntPtr L);
         [MonoPInvokeCallback(typeof(LuaDLL.lua_CSFunction))]
         public static int LoadLuaPb(System.IntPtr L) {
@@ -20,10 +13,24 @@ namespace XLua.LuaDLL {
         }
 
         [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int luaopen_quanta(System.IntPtr L);
+        [MonoPInvokeCallback(typeof(LuaDLL.lua_CSFunction))]
+        public static int LoadQuanta(System.IntPtr L) {
+            return luaopen_quanta(L);
+        }
+
+        [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
         public static extern int luaopen_ljson(System.IntPtr L);
         [MonoPInvokeCallback(typeof(LuaDLL.lua_CSFunction))]
         public static int LoadLuaJson(System.IntPtr L) {
             return luaopen_ljson(L);
+        }
+
+        [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
+        public static extern int luaopen_luassl(System.IntPtr L);
+        [MonoPInvokeCallback(typeof(LuaDLL.lua_CSFunction))]
+        public static int LoadLuaSsl(System.IntPtr L) {
+            return luaopen_luassl(L);
         }
 
         [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
@@ -62,10 +69,10 @@ namespace XLua.LuaDLL {
         }
 
         [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
-        public static extern int luaopen_lminiz(System.IntPtr L);
+        public static extern int luaopen_luazip(System.IntPtr L);
         [MonoPInvokeCallback(typeof(LuaDLL.lua_CSFunction))]
-        public static int LoadLuaMiniz(System.IntPtr L) {
-            return luaopen_lminiz(L);
+        public static int LoadLuaZip(System.IntPtr L) {
+            return luaopen_luazip(L);
         }
 
         [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]

@@ -42,7 +42,7 @@ function Fairy_Create_GUI(name, parent)
     parent = parent or GRoot.inst
     local win = windows[name]
     if not win then
-        require("fairygui." .. name)
+        require("gui." .. name)
         assert(_G[name] ~= nil, string.format("%s GUI not found.", name))
         win = _G[name](parent, name)
         windows[name] = win
