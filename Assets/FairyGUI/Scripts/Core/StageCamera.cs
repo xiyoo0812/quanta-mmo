@@ -1,5 +1,6 @@
 ﻿using System;
 using UnityEngine;
+using UnityEngine.Rendering.Universal;
 
 namespace FairyGUI
 {
@@ -195,6 +196,10 @@ namespace FairyGUI
             camera.allowHDR = false;
             camera.allowMSAA = false;
             cameraObject.AddComponent<StageCamera>();
+            UniversalAdditionalCameraData uiCamData = camera.GetUniversalAdditionalCameraData();
+            uiCamData.renderType = CameraRenderType.Overlay;
+            UniversalAdditionalCameraData baseCamData = Camera.main.GetUniversalAdditionalCameraData();
+            baseCamData.cameraStack.Add(camera);
             return camera;
         }
     }
