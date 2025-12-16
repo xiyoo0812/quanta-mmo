@@ -1,48 +1,124 @@
 //XluaManager.cs
 
-using System.IO;
+using System;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using XLua;
+using FairyGUI;
 
 public static class XluaManager {
-    private static LuaEnv _luaenv;
+    private struct LogEntry {
+        public uint level;
+        public string message;
+    }
 
-    public static LuaEnv Lua {
-        get {
-            if (_luaenv == null) {
-                _luaenv = new LuaEnv();
-                _luaenv.AddBuildin("luapb", XLua.LuaDLL.Lua.LoadLuaPb);
-                _luaenv.AddBuildin("quanta", XLua.LuaDLL.Lua.LoadQuanta);
-                _luaenv.AddBuildin("ljson", XLua.LuaDLL.Lua.LoadLuaJson);
-                _luaenv.AddBuildin("luabus", XLua.LuaDLL.Lua.LoadLuaBus);
-                _luaenv.AddBuildin("lualog", XLua.LuaDLL.Lua.LoadLuaLog);
-                _luaenv.AddBuildin("lsmdb", XLua.LuaDLL.Lua.LoadLuaSmdb);
-                _luaenv.AddBuildin("luassl", XLua.LuaDLL.Lua.LoadLuaSsl);
-                _luaenv.AddBuildin("luazip", XLua.LuaDLL.Lua.LoadLuaZip);
-                _luaenv.AddBuildin("lcodec", XLua.LuaDLL.Lua.LoadLuaCodec);
-                _luaenv.AddBuildin("lstdfs", XLua.LuaDLL.Lua.LoadLuaStdfs);
-                _luaenv.AddBuildin("ltimer", XLua.LuaDLL.Lua.LoadLuaTimer);
-                _luaenv.AddBuildin("lworker", XLua.LuaDLL.Lua.LoadLuaWorker);
-                _luaenv.AddLoader(luaLoader);
-                //执行启动脚本
-                _luaenv.DoString("require 'main'");
-            }
-            return _luaenv;
+    const string LUADLL = "xlua";
+    private static LuaEnv s_Luaenv;
+    private static string s_RootArg;
+    private static IntPtr s_Quanta = IntPtr.Zero;
+    private static readonly object s_QueueLock = new object();
+    private static readonly Queue<LogEntry> s_LogQueue = new Queue<LogEntry>();
+
+    [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
+    public static extern IntPtr init_quanta(IntPtr L, int argc, string[] argv);
+    public static IntPtr InitQuanta(IntPtr L, int argc, string[] argv) {
+        return init_quanta(L, argc, argv);
+    }
+
+    [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
+    public static extern void stop_quanta(IntPtr quanta);
+    public static void StopQuanta(IntPtr quanta){
+        stop_quanta(quanta);
+    }
+
+    [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
+    public static extern bool run_quanta(IntPtr quanta);
+    public static bool RunQuanta(IntPtr quanat) {
+        return run_quanta(quanat);
+    }
+
+    [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
+    public static extern IntPtr last_error();
+    public static string GetLastError() {
+        IntPtr errorPtr = last_error();
+        string err = Marshal.PtrToStringAnsi(errorPtr);
+        if (err == null) err = Marshal.PtrToStringUTF8(errorPtr);
+        return err;
+    }
+
+    [UnmanagedFunctionPointer(CallingConvention.Cdecl)]
+    public delegate void UnityConsoleOutputDelegate(IntPtr msg, UIntPtr msglen, UIntPtr level);
+
+    [DllImport(LUADLL, CallingConvention = CallingConvention.Cdecl)]
+    public static extern int lualog_set_logger(UnityConsoleOutputDelegate fn);
+    public static void SetLuaLogger(UnityConsoleOutputDelegate fn) {
+        lualog_set_logger(fn);
+    }
+
+    public static void Start() {
+        s_Luaenv = new LuaEnv();
+        SetLuaLogger(UnityConsoleOutput);
+        string[] cmdline = System.Environment.GetCommandLineArgs();
+        string[] argv = { cmdline[0], "Lua/xlua.conf", "", "" };
+        if (cmdline.Length > 1) argv[2] = "--ROOT_ARGV=" + cmdline[1];
+#if UNITY_EDITOR
+        argv[2] = "--UNITY_DRITOR=1";
+#endif
+        IntPtr quanta = InitQuanta(s_Luaenv.L, argv.Length, argv);
+        if (quanta == IntPtr.Zero) {
+            string err = GetLastError();
+            Debug.LogError($"InitQuanta Error: {err}");
+        } else {
+            s_Quanta = quanta;
+            Debug.Log("InitQuanta Success!");
         }
     }
 
-    private static byte[] luaLoader(ref string filename) {
-        filename = filename.Replace('.', '/');
-        string path_lua = "Quanta/lua/" + filename + ".lua";
-        if(File.Exists(path_lua)) {
-            byte[] content = File.ReadAllBytes(path_lua);
-            return content;
+    public static void Update() {
+        if (s_Quanta != IntPtr.Zero) {
+            RunQuanta(s_Quanta);
         }
-        string path_conf = "Quanta/config/" + filename;
-        if(File.Exists(path_conf)) {
-            byte[] content = File.ReadAllBytes(path_conf);
-            return content;
+        ProcessLogQueue();
+    }
+
+    public static void OnDestroy() {
+        if (s_Quanta != IntPtr.Zero) {
+            ProcessLogQueue();
+            StopQuanta(s_Quanta);
+            s_Quanta = IntPtr.Zero;
         }
-        return null;
+    }
+
+    [MonoPInvokeCallback(typeof(UnityConsoleOutputDelegate))]
+    public static void UnityConsoleOutput(IntPtr msgPtr, UIntPtr msglen, UIntPtr level) {
+        int len = (int)msglen.ToUInt32();
+        string message = Marshal.PtrToStringAnsi(msgPtr, len);
+        if (message == null) message = Marshal.PtrToStringUTF8(msgPtr, len);
+        if (message != null) {
+            lock (s_QueueLock) {
+                s_LogQueue.Enqueue(new LogEntry { message = message, level = level.ToUInt32() });
+            }
+        }
+    }
+
+    public static void ProcessLogQueue() {
+        LogEntry[] logsToProcess = null;
+        lock (s_QueueLock) {
+            if (s_LogQueue.Count > 0) {
+                logsToProcess = s_LogQueue.ToArray();
+                s_LogQueue.Clear();
+            }
+        }
+        if (logsToProcess != null) {
+            foreach (var log in logsToProcess) {
+                switch (log.level) {
+                    case 5: Debug.LogError(log.message); break;
+                    case 3: Debug.LogWarning(log.message); break;
+                    case 6: Debug.LogException(new Exception(log.message)); break;
+                    default: Debug.Log(log.message); break;
+                }
+            }
+        }
     }
 }
