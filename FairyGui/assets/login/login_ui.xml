@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n0_v1sh" name="n0" src="v1sh0" fileName="images/UI_Login_Bg_1.png" xy="0,0"/>
+    <image id="n1_v1sh" name="n1" src="v1sh2" fileName="images/advice.png" xy="93,4" size="1734,28" aspect="true" color="#666666"/>
+    <component id="n4_v1sh" name="n4" src="v1sh46" fileName="widget/button/btn_main.xml" pkg="9i7luk0q" xy="1693,981" size="206,68">
+      <Button title="切换账号"/>
+    </component>
+    <component id="n8_v1sh" name="n8" src="v1sh4b" fileName="widget/button/btn_passive.xml" pkg="9i7luk0q" xy="842,871" size="357,68">
+      <Button title="账号登录&#xA;"/>
+    </component>
+    <component id="n18_v1sh" name="n18" src="v1sh4l" fileName="widget/editbox/editbox4.xml" pkg="9i7luk0q" xy="998,808" size="200,60"/>
+  </displayList>
+</component>

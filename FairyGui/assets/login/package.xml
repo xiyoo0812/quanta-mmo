@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="9tgfnqvn">
+  <resources>
+    <image id="v1sh0" name="UI_Login_Bg_1.png" path="/images/"/>
+    <image id="v1sh2" name="advice.png" path="/images/"/>
+    <component id="v1sh3" name="login_ui.xml" path="/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

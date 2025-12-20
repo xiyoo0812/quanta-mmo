@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="9yu5u9u7">
+  <resources>
+    <image id="v1sh0" name="UI_Background_1.jpg" path="/"/>
+    <image id="v1sh1" name="UI_Background_2.png" path="/"/>
+    <image id="v1sh2" name="UI_Background_3.jpg" path="/"/>
+    <image id="v1sh3" name="UI_Background_4.png" path="/"/>
+    <image id="v1sh4" name="UI_Background_5.png" path="/"/>
+    <image id="v1sh5" name="UI_Background_6.png" path="/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>
