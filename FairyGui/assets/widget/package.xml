@@ -169,6 +169,11 @@
     <component id="v1sh4p" name="checkbox2.xml" path="/widget/checkbox/" exported="true"/>
     <component id="v1sh4q" name="checkbox3.xml" path="/widget/checkbox/" exported="true"/>
     <component id="v1sh4r" name="checkbox4.xml" path="/widget/checkbox/" exported="true"/>
+    <image id="olqi4s" name="progress_back.png" path="/progress/" scale="9grid" scale9grid="13,11,167,22"/>
+    <image id="olqi4t" name="progress_fill_green.png" path="/progress/" scale="9grid" scale9grid="11,11,168,22"/>
+    <image id="olqi4u" name="progress_fill_red.png" path="/progress/"/>
+    <image id="olqi4v" name="progress_fill_yellow.png" path="/progress/"/>
+    <component id="olqi4w" name="progress1.xml" path="/widget/progress/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

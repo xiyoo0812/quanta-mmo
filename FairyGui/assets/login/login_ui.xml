@@ -3,12 +3,21 @@
   <displayList>
     <image id="n0_v1sh" name="n0" src="v1sh0" fileName="images/UI_Login_Bg_1.png" xy="0,0"/>
     <image id="n1_v1sh" name="n1" src="v1sh2" fileName="images/advice.png" xy="93,4" size="1734,28" aspect="true" color="#666666"/>
-    <component id="n4_v1sh" name="n4" src="v1sh46" fileName="widget/button/btn_main.xml" pkg="9i7luk0q" xy="1693,981" size="206,68">
+    <component id="n4_v1sh" name="switch" src="v1sh46" fileName="widget/button/btn_main.xml" pkg="9i7luk0q" xy="1693,981" size="206,68">
       <Button title="切换账号"/>
     </component>
-    <component id="n8_v1sh" name="n8" src="v1sh4b" fileName="widget/button/btn_passive.xml" pkg="9i7luk0q" xy="842,871" size="357,68">
+    <image id="n20_olqi" name="n20" src="v1sh3n" fileName="box/UI_Common_Img_Gradualchange_2.png" pkg="9i7luk0q" xy="790,642" alpha="0.5"/>
+    <component id="n8_v1sh" name="login" src="v1sh4b" fileName="widget/button/btn_passive.xml" pkg="9i7luk0q" xy="783,878" size="357,68" group="n27_olqi">
       <Button title="账号登录&#xA;"/>
     </component>
-    <component id="n18_v1sh" name="n18" src="v1sh4l" fileName="widget/editbox/editbox4.xml" pkg="9i7luk0q" xy="998,808" size="200,60"/>
+    <component id="n18_v1sh" name="username" src="v1sh4l" fileName="widget/editbox/editbox4.xml" pkg="9i7luk0q" xy="905,731" size="261,60" group="n27_olqi">
+      <Label title="xiyoo0812" titleColor="#ffffff" titleFontSize="30" prompt="输入账户名" maxLength="16"/>
+    </component>
+    <component id="n24_olqi" name="username" src="v1sh4l" fileName="widget/editbox/editbox4.xml" pkg="9i7luk0q" xy="903,801" size="261,60" group="n27_olqi">
+      <Label titleColor="#ffffff" titleFontSize="30" prompt="输入密码" maxLength="10" password="true"/>
+    </component>
+    <text id="n25_olqi" name="n25" xy="754,738" size="126,45" group="n27_olqi" fontSize="30" color="#ffffff" autoSize="none" strokeColor="#000000" text="账号："/>
+    <text id="n26_olqi" name="n26" xy="754,812" size="126,45" group="n27_olqi" fontSize="30" color="#ffffff" autoSize="none" strokeColor="#000000" text="密码："/>
+    <group id="n27_olqi" name="n27" xy="754,731" size="412,215"/>
   </displayList>
 </component>
