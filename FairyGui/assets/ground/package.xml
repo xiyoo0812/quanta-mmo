@@ -7,6 +7,30 @@
     <image id="v1sh3" name="UI_Background_4.png" path="/"/>
     <image id="v1sh4" name="UI_Background_5.png" path="/"/>
     <image id="v1sh5" name="UI_Background_6.png" path="/"/>
+    <image id="udlw6" name="UI_Common_Img_Pop-upwindow_1.png" path="/"/>
+    <image id="udlw7" name="UI_Storagebox_Img_Baseplate_1.png" path="/"/>
+    <image id="udlw8" name="UI_Single_Img_System_1.png" path="/"/>
+    <image id="udlw9" name="UI_Order_Img_Texture_2.png" path="/"/>
+    <image id="udlwa" name="UI_Order_Img_Texture_1.png" path="/"/>
+    <image id="udlwb" name="UI_Order_Img_Bottom_sel.png" path="/"/>
+    <image id="udlwc" name="UI_Order_Img_Bottom_7.png" path="/"/>
+    <image id="udlwd" name="UI_Order_Img_Bottom_6.png" path="/"/>
+    <image id="udlwe" name="UI_Order_Img_Bottom_4.png" path="/"/>
+    <image id="udlwf" name="UI_Order_Img_Bottom_3.png" path="/"/>
+    <image id="udlwg" name="UI_Order_Img_Bottom_2.png" path="/"/>
+    <image id="udlwh" name="UI_Order_Img_Bottom_1.png" path="/"/>
+    <image id="udlwi" name="UI_Order_Img_Accessories_4.png" path="/"/>
+    <image id="udlwj" name="UI_Login_Img_Room_1.png" path="/"/>
+    <image id="udlwk" name="UI_Login_Img_Particulars_1.png" path="/"/>
+    <image id="udlwl" name="UI_Login_Btn_Multiplayermode_pre.png" path="/"/>
+    <image id="udlwm" name="UI_Login_Btn_Multiplayermode_nor.png" path="/"/>
+    <image id="udlwn" name="UI_Item_Img_Background_2.png" path="/"/>
+    <image id="udlwo" name="UI_Item_Img_Background_1.png" path="/"/>
+    <image id="udlwp" name="UI_Construction_Img_Background_1.png" path="/"/>
+    <image id="udlwq" name="UI_Common_Img_Pop-upwindow_3.png" path="/"/>
+    <image id="udlwr" name="UI_Common_Img_Pop-upwindow_2.png" path="/"/>
+    <image id="udlws" name="UI_Storagebox_Img_Baseplate_2.png" path="/"/>
+    <image id="udlwt" name="UI_System_Img_Escbox_1.png" path="/"/>
   </resources>
   <publish name=""/>
 </packageDescription>
