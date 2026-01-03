@@ -1,0 +1,20 @@
+ManifestFileVersion: 0
+CRC: 4069220201
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: ce56681813474cb30d7b9c20ccfcc701
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: ce56681813474cb30d7b9c20ccfcc701
+HashAppended: 0
+ClassTypes:
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/FairyGUI/login_fui.bytes
+Dependencies: []

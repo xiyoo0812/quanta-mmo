@@ -1,15 +1,15 @@
 ManifestFileVersion: 0
-CRC: 2340883131
+CRC: 184116874
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: a60604cada323396cfdd77c5fc277831
+    Hash: d34bbfd52e7cd598265f1b750ab66913
   TypeTreeHash:
     serializedVersion: 2
     Hash: deaf5b7fe83e1a31de382f7fed810e72
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: a60604cada323396cfdd77c5fc277831
+    Hash: d34bbfd52e7cd598265f1b750ab66913
 HashAppended: 0
 ClassTypes:
 - Class: 28
@@ -18,6 +18,6 @@ ClassTypes:
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
-- Assets/Resources/FairyGUI/common_atlas0.png
-- Assets/Resources/FairyGUI/common_fui.bytes
+- Assets/Resources/FairyGUI/hotfix_atlas0.png
+- Assets/Resources/FairyGUI/hotfix_fui.bytes
 Dependencies: []
