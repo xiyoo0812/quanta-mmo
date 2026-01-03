@@ -1,10 +1,13 @@
 --window_mgr.lua
 
-local log_err   = logger.err
-local sformat   = string.format
-local ABMgr     = CS.ABMgr
-local GRoot     = CS.FairyGUI.GRoot
-local UIPackage = CS.FairyGUI.UIPackage
+local log_err       = logger.err
+local sformat       = string.format
+local ABMgr         = CS.ABMgr
+local Engine        = CS.UnityEngine
+local GRoot         = CS.FairyGUI.GRoot
+local Stage         = CS.FairyGUI.Stage
+local UIPackage     = CS.FairyGUI.UIPackage
+local ContentScaler = CS.FairyGUI.UIContentScaler
 
 local WindowMgr = singleton()
 local prop = property(WindowMgr)
@@ -12,7 +15,12 @@ prop:reader("guis", {})
 prop:reader("packages", {})
 
 function WindowMgr:__init()
-    self:add_package("common")
+    self:add_package("widget")
+    local tex = Engine.Resources.Load("Mouse/UI_Common_Img_Mouse_1.png")
+    Stage.inst:RegisterCursor("text-link", tex, Engine.Vector2(0,0))
+
+    Engine.Screen.SetResolution(1920, 1080, false)
+    GRoot.inst:SetContentScaleFactor(1920, 1080, ContentScaler.ScreenMatchMode.MatchWidth)
 end
 
 function WindowMgr:__release()

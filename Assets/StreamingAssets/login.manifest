@@ -1,20 +1,23 @@
 ManifestFileVersion: 0
-CRC: 4069220201
+CRC: 748657063
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: ce56681813474cb30d7b9c20ccfcc701
+    Hash: 9bdbcb14a5eb44b81bc438d9eeac367e
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 5ad585dd02dfb5016c0dad519eab8f49
+    Hash: deaf5b7fe83e1a31de382f7fed810e72
   IncrementalBuildHash:
     serializedVersion: 2
-    Hash: ce56681813474cb30d7b9c20ccfcc701
+    Hash: 9bdbcb14a5eb44b81bc438d9eeac367e
 HashAppended: 0
 ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
 - Class: 49
   Script: {instanceID: 0}
 SerializeReferenceClassIdentifiers: []
 Assets:
+- Assets/Resources/FairyGUI/login_atlas0.png
 - Assets/Resources/FairyGUI/login_fui.bytes
 Dependencies: []
