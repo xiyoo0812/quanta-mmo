@@ -1,15 +1,14 @@
 --Player.lua
-local log_warn      = logger.warn
+local log_warn          = logger.warn
 
-local Player = class()
+local LoginComponent    = import("component/login_component.lua")
+
+local Player = class(nil, LoginComponent)
 
 local prop = property(Player)
-prop:reader("id")           --id
-prop:reader("user_id")      --user_id
-prop:reader("open_id")      --open_id
+prop:accessor("id", nil)    --id
 
-function Player:__init(open_id)
-    self.open_id = open_id
+function Player:__init()
 end
 
 -- 初始化
@@ -47,5 +46,7 @@ end
 function Player:destory()
     self:unload()
 end
+
+quanta.my_player = Player()
 
 return Player

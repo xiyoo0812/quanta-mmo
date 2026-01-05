@@ -100,8 +100,8 @@ message login_role_choose_res
     repeated string addrs       = 2;        // gateway ips
     uint32 port                 = 3;        // gateway port
     uint32 lobby                = 4;        // lobby id
-    uint32 token                = 5;        // 验证token
-    uint64 role_id              = 6;        // role_id
+    uint64 role_id              = 5;        // role_id
+    uint32 verify_code          = 6;        // 验证码
 }
 
 //NID_LOGIN_ROLE_DELETE_REQ
@@ -159,12 +159,6 @@ message login_role_reload_res
 {
     uint32 error_code           = 1;        // 错误码
     uint32 token                = 2;        // 重连token
-}
-
-//NID_LOGIN_ROLE_KICKOUT_NTF
-message login_role_kickout_ntf
-{
-    uint32 reason               = 1;        // 原因
 }
 
 //NID_ENTITY_ENTER_SCENE_NTF
