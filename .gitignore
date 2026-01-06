@@ -7,6 +7,7 @@
 /[Pp]rojectSettings/ProjectVersion.txt
 /Assets/AssetStoreTools*
 /Game/sbin/config/*
+/Game/sbin/logs/*
 /FairyGui/.objs/
 /.vs/
 
@@ -26,7 +27,6 @@ ExportedObj/
 *.dll
 *.exe
 *.so
-*.log
  
 # Unity3D generated meta files
 *.pidb.meta
