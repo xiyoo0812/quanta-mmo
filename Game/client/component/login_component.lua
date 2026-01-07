@@ -1,6 +1,7 @@
 --login_component.lua
 local log_err           = logger.err
 local log_info          = logger.info
+local log_debug         = logger.debug
 local qfailed           = quanta.failed
 local guid_encode       = codec.guid_encode
 
@@ -45,6 +46,7 @@ function LoginComponent:login_account()
     local device_id = guid_encode()
     local data = { openid = self.open_id, session = self.password, platform = PLAT_PASSWORD, device_id = device_id }
     local ok, res = self.client:call("NID_LOGIN_ACCOUNT_LOGIN_REQ", data)
+    log_debug("[LoginComponent][login_account] return: {}", res)
     if qfailed(res.error_code, ok) then
         log_err("[LoginComponent][login_account] login account failed: {}", res)
         self.client:close()
