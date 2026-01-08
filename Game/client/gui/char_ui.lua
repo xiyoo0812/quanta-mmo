@@ -2,7 +2,6 @@
 local log_err       = logger.err
 
 local my_player     = quanta.get("my_player")
-local event_mgr     = quanta.get("event_mgr")
 
 local Window = import("gui/Window.lua")
 local CharUI = class(Window)
@@ -30,16 +29,7 @@ function CharUI:init_event()
 end
 
 function CharUI:init_component()
-    event_mgr:add_trigger(self, "on_random_name_success")
     self:set_controller_status("status",  my_player:has_role() and 0 or 1)
-end
-
-function CharUI:on_close()
-    event_mgr:remove_trigger(self, "on_random_name_success")
-end
-
-function CharUI:on_random_name_success()
-    self:open_gui("char_ui", true)
 end
 
 return CharUI
