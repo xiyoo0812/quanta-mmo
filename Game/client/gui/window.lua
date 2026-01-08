@@ -3,6 +3,7 @@ local type          = type
 local log_err       = logger.err
 local sformat       = string.format
 
+local thread_mgr    = quanta.get("thread_mgr")
 local window_mgr    = quanta.get("window_mgr")
 
 local Window = class()
@@ -83,7 +84,9 @@ end
 function Window:register_click(child_name, response, widget_name)
     local child = self:get_child(child_name, widget_name)
     if child then
-        child.onClick:Add(response)
+        child.onClick:Add(function(...)
+            thread_mgr:fork(response, nil, ...)
+        end)
     end
 end
 
@@ -94,7 +97,9 @@ function Window:register_widget_click(widget, response, child_name)
         child = widget:GetChild(child_name)
     end
     child = child or widget
-    child.onClick:Add(response)
+    child.onClick:Add(function(...)
+        thread_mgr:fork(response, nil, ...)
+    end)
 end
 
 --获取子窗口

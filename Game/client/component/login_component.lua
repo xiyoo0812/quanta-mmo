@@ -19,10 +19,18 @@ prop:reader("open_id", nil)
 prop:reader("user_id", nil)
 prop:reader("password", nil)
 prop:reader("device_id", nil)
+prop:reader("roles", {})
 
 function LoginComponent:__init()
     event_mgr:add_trigger(self, "on_tcp_connected")
     event_mgr:add_trigger(self, "on_gate_connected")
+end
+
+function LoginComponent:has_role()
+    if next(self.roles) then
+        return true
+    end
+    return false
 end
 
 function LoginComponent:on_tcp_connected()
@@ -54,7 +62,21 @@ function LoginComponent:login_account()
     end
     self.device_id = device_id
     self.user_id = res.user_id
-    log_info("[LoginComponent][login_account] login account success")
+    for _, role in ipairs(res.roles or {}) do
+        self.roles[role.role_id] = role
+    end
+    event_mgr:notify_trigger("on_login_account_success")
+    log_info("[LoginComponent][login_account] login account success!")
+end
+
+function LoginComponent:random_name()
+    local ok, res = self.client:call("NID_LOGIN_RANDOM_NAME_REQ", {})
+     if qfailed(res.error_code, ok) then
+        log_err("[LoginComponent][random_name] random name failed!")
+        return false
+    end
+    log_info("[LoginComponent][random_name] name : {}", res.name)
+    return ok, res.name
 end
 
 return LoginComponent

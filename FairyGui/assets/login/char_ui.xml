@@ -1,28 +1,33 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="status" pages="0,choose,1,create" selected="1"/>
+  <controller name="status" pages="0,choose,1,create" selected="0"/>
   <displayList>
-    <image id="n0_r0lu" name="n0" src="aw78a" fileName="images/bg1.jpg" xy="0,0" size="1920,1080"/>
+    <image id="n0_r0lu" name="n0" src="aw78a" fileName="images/bg.jpg" xy="0,0" size="1920,1080"/>
     <list id="n4_m07e" name="role_list" xy="685,266" size="608,651" layout="row" overflow="scroll" scroll="horizontal" scrollBarFlags="2" scrollBar="hidden" clipSoftness="20,0" colGap="20" defaultItem="ui://sg3bb1b2r0lu5">
       <gearDisplay controller="status" pages="0,1"/>
       <relation target="" sidePair="center-center"/>
       <item url="ui://9tgfnqvnaw785"/>
       <item url="ui://9tgfnqvnaw786"/>
     </list>
-    <component id="n7_m07e" name="name" src="v1sh4i" fileName="widget/editbox/editbox1.xml" pkg="9i7luk0q" xy="683,923" size="507,74" touchable="false">
+    <component id="n7_m07e" name="name" src="v1sh4i" fileName="widget/editbox/editbox1.xml" pkg="9i7luk0q" xy="682,923" size="616,74" touchable="false">
+      <gearDisplay controller="status" pages="0"/>
       <Label titleColor="#ffffff" titleFontSize="40"/>
     </component>
     <component id="n8_ihng" name="close" src="v1sh4f" fileName="widget/button/btn_close1.xml" pkg="9i7luk0q" xy="1777,28" size="80,80"/>
     <component id="n6_m07e" name="random" src="aw78b" fileName="btn_dance.xml" xy="1225,929">
       <gearDisplay controller="status" pages="1"/>
     </component>
-    <component id="n1_r0lu" name="enter" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1460,900" size="300,80">
+    <component id="n1_r0lu" name="enter" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1460,920" size="300,80">
       <gearDisplay controller="status" pages="0"/>
       <Button title="进入游戏"/>
     </component>
-    <component id="n9_7evw" name="create" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1460,900" size="300,80">
+    <component id="n9_7evw" name="create" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1460,920" size="300,80">
       <gearDisplay2 controller="status" pages="1" condition="0"/>
       <Button title="创建角色"/>
+    </component>
+    <component id="n10_gap0" name="cname" src="v1sh4i" fileName="widget/editbox/editbox1.xml" pkg="9i7luk0q" xy="684,923" size="507,74">
+      <gearDisplay controller="status" pages="1"/>
+      <Label titleFontSize="40" prompt="请输入角色名称"/>
     </component>
   </displayList>
 </component>

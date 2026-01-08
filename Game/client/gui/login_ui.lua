@@ -1,6 +1,7 @@
 --login_ui.lua
 local log_err       = logger.err
 
+local event_mgr     = quanta.get("event_mgr")
 local my_player     = quanta.get("my_player")
 
 local Window = import("gui/Window.lua")
@@ -23,9 +24,15 @@ function LoginUI:init_event()
 end
 
 function LoginUI:init_component()
+    event_mgr:add_trigger(self, "on_login_account_success")
 end
 
 function LoginUI:on_close()
+    event_mgr:remove_trigger(self, "on_login_account_success")
+end
+
+function LoginUI:on_login_account_success()
+    self:open_gui("char_ui", true)
 end
 
 return LoginUI
