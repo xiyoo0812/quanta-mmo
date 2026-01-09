@@ -1,16 +1,16 @@
 ManifestFileVersion: 0
-CRC: 2520887999
+CRC: 111256641
 AssetBundleManifest:
   AssetBundleInfos:
     Info_0:
-      Name: hotfix
-      Dependencies: {}
-    Info_1:
-      Name: ground
-      Dependencies: {}
-    Info_2:
       Name: widget
       Dependencies: {}
-    Info_3:
+    Info_1:
       Name: login
+      Dependencies: {}
+    Info_2:
+      Name: ground
+      Dependencies: {}
+    Info_3:
+      Name: hotfix
       Dependencies: {}

@@ -1,13 +1,17 @@
 --window_mgr.lua
 
 local log_err       = logger.err
+local log_info      = logger.info
 local sformat       = string.format
+
 local ABMgr         = CS.ABMgr
 local Engine        = CS.UnityEngine
 local GRoot         = CS.FairyGUI.GRoot
 local Stage         = CS.FairyGUI.Stage
 local UIPackage     = CS.FairyGUI.UIPackage
 local ContentScaler = CS.FairyGUI.UIContentScaler
+
+local UNITY_DRITOR  = environ.status("QUANTA_UNITY_DRITOR")
 
 local WindowMgr = singleton()
 local prop = property(WindowMgr)
@@ -36,17 +40,26 @@ function WindowMgr:add_package(name)
     if self.packages[name] then
         return
     end
-    local ab = ABMgr.LoadAB(name)
-    if not ab then
-        log_err("[WindowMgr][add_package] load ab: {} failed!", name)
-        return
+    if UNITY_DRITOR then
+        local pkg = UIPackage.AddPackage("FairyGUI/" .. name)
+        if not pkg then
+            log_err("[WindowMgr][add_package] add package: {} failed!", name)
+            return
+        end
+        self.packages[name] = pkg
+    else
+        local ab = ABMgr.LoadAB(name)
+        if not ab then
+            log_err("[WindowMgr][add_package] load ab: {} failed!", name)
+            return
+        end
+        local pkg = UIPackage.AddPackage(ab)
+        if not pkg then
+            log_err("[WindowMgr][add_package] add package: {} failed!", name)
+            return
+        end
+        self.packages[name] = pkg
     end
-    local pkg = UIPackage.AddPackage(ab)
-    if not pkg then
-        log_err("[WindowMgr][add_package] add package: {} failed!", name)
-        return
-    end
-    self.packages[name] = pkg
 end
 
 function WindowMgr:remove_package(name)
