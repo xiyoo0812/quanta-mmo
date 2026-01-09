@@ -28,18 +28,18 @@ enum NCmdId
     NID_LOGIN_ACCOUNT_RELOAD_RES        = 10004;
     NID_LOGIN_RANDOM_NAME_REQ           = 10005;    //随机名字请求
     NID_LOGIN_RANDOM_NAME_RES           = 10006;    
-    NID_LOGIN_ROLE_CREATE_REQ           = 10007;    //创建角色请求
-    NID_LOGIN_ROLE_CREATE_RES           = 10008;    
-    NID_LOGIN_ROLE_CHOOSE_REQ           = 10009;    //选择角色请求
-    NID_LOGIN_ROLE_CHOOSE_RES           = 10010;
-    NID_LOGIN_ROLE_DELETE_REQ           = 10011;    //删除角色请求
-    NID_LOGIN_ROLE_DELETE_RES           = 10012;
-    NID_LOGIN_ROLE_LOGIN_REQ            = 10013;    //登陆角色请求
-    NID_LOGIN_ROLE_LOGIN_RES            = 10014;
-    NID_LOGIN_ROLE_LOGOUT_REQ           = 10015;    //登出角色请求
-    NID_LOGIN_ROLE_LOGOUT_RES           = 10016;
-    NID_LOGIN_ROLE_RELOAD_REQ           = 10017;    //重登角色请求
-    NID_LOGIN_ROLE_RELOAD_RES           = 10018;    
+    NID_LOGIN_PLAYER_CREATE_REQ         = 10007;    //创建角色请求
+    NID_LOGIN_PLAYER_CREATE_RES         = 10008;    
+    NID_LOGIN_PLAYER_CHOOSE_REQ         = 10009;    //选择角色请求
+    NID_LOGIN_PLAYER_CHOOSE_RES         = 10010;
+    NID_LOGIN_PLAYER_DELETE_REQ         = 10011;    //删除角色请求
+    NID_LOGIN_PLAYER_DELETE_RES         = 10012;
+    NID_LOGIN_PLAYER_LOGIN_REQ          = 10013;    //登陆角色请求
+    NID_LOGIN_PLAYER_LOGIN_RES          = 10014;
+    NID_LOGIN_PLAYER_LOGOUT_REQ         = 10015;    //登出角色请求
+    NID_LOGIN_PLAYER_LOGOUT_RES         = 10016;
+    NID_LOGIN_PLAYER_RELOAD_REQ         = 10017;    //重登角色请求
+    NID_LOGIN_PLAYER_RELOAD_RES         = 10018;    
 
     //实体系统&12101-12150
     NID_ENTITY_ENTER_SCENE_NTF          = 12101;    //实体进入场景通知

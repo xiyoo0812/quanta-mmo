@@ -29,7 +29,7 @@ function CharUI:init_event()
 end
 
 function CharUI:init_component()
-    self:set_controller_status("status",  my_player:has_role() and 0 or 1)
+    self:set_controller_status("status",  my_player:has_player() and 0 or 1)
 end
 
 return CharUI
