@@ -17,8 +17,13 @@ local prop = property(LoginComponent)
 prop:reader("client", nil)
 prop:reader("open_id", nil)
 prop:reader("user_id", nil)
+prop:reader("lobby_id", nil)
 prop:reader("password", nil)
 prop:reader("device_id", nil)
+prop:reader("player_id", nil)
+prop:reader("verify_code", nil)
+prop:reader("gate_port", nil)
+prop:reader("gate_ip", nil)
 prop:reader("players", {})
 
 function LoginComponent:__init()
@@ -82,7 +87,7 @@ end
 function LoginComponent:create_player(name, gender, playermodel)
     local data = { user_id = self.user_id, name = name, gender = gender, model = playermodel }
     local ok, res = self.client:call("NID_LOGIN_PLAYER_CREATE_REQ", data)
-     if qfailed(res.error_code, ok) then
+    if qfailed(res.error_code, ok) then
         log_err("[LoginComponent][create_player] create player failed: {}", res)
         return
     end
@@ -91,7 +96,53 @@ function LoginComponent:create_player(name, gender, playermodel)
     log_info("[LoginComponent][create_player] name : {}", player_info)
 end
 
-function LoginComponent:choose_player(name, gender, playermodel)
+function LoginComponent:choose_player(player_id)
+    local data = { user_id = self.user_id, player_id = player_id }
+    local ok, res = self.client:call("NID_LOGIN_PLAYER_CHOOSE_REQ", data)
+    if qfailed(res.error_code, ok) then
+        log_err("[LoginComponent][choose_player] create player failed: {}", res)
+        return
+    end
+    self.gate_ip = res.gate_ip
+    self.lobby_id = res.lobby_id
+    self.gate_port = res.gate_port
+    self.player_id = res.player_id
+    self.verify_code = res.verify_code
+    log_info("[LoginComponent][choose_player] name : {}", res)
+end
+
+function LoginComponent:delete_player(player_id)
+    local data = { user_id = self.user_id, player_id = player_id }
+    local ok, res = self.client:call("NID_LOGIN_PLAYER_DELETE_REQ", data)
+    if qfailed(res.error_code, ok) then
+        log_err("[LoginComponent][delete_player] delete player failed: {}", res)
+        return
+    end
+    self.players[player_id] = nil
+    event_mgr:notify_trigger("on_delete_player_success")
+    log_info("[LoginComponent][delete_player] delete player: {} success!", player_id)
+end
+
+function LoginComponent:login_player(player_id)
+    local data = { open_id = self.open_id, player_id = player_id }
+    local ok, res = self.client:call("NID_LOGIN_PLAYER_LOGIN_REQ", data)
+    if qfailed(res.error_code, ok) then
+        log_err("[LoginComponent][login_player] delete player failed: {}", res)
+        return
+    end
+    event_mgr:notify_trigger("on_login_player_success")
+    log_info("[LoginComponent][login_player] login player: {} success!", player_id)
+end
+
+function LoginComponent:logout_player(player_id)
+    local data = { open_id = self.open_id, player_id = player_id }
+    local ok, res = self.client:call("NID_LOGIN_PLAYER_LOGIN_REQ", data)
+    if qfailed(res.error_code, ok) then
+        log_err("[LoginComponent][logout_player] delete player failed: {}", res)
+        return
+    end
+    event_mgr:notify_trigger("on_logout_player_success")
+    log_info("[LoginComponent][logout_player] logout player: {} success!", player_id)
 end
 
 return LoginComponent

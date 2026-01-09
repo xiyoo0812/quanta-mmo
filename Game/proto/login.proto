@@ -97,11 +97,11 @@ message login_player_choose_req
 message login_player_choose_res
 {
     uint32 error_code           = 1;        // 错误码
-    repeated string addrs       = 2;        // gateway ips
-    uint32 port                 = 3;        // gateway port
-    uint32 lobby                = 4;        // lobby id
-    uint64 player_id            = 5;        // player_id
-    uint32 verify_code          = 6;        // 验证码
+    uint32 lobby_id             = 2;        // lobby id
+    uint64 player_id            = 3;        // player id
+    uint32 verify_code          = 4;        // 验证码
+    uint32 gate_port            = 5;        // gateway port
+    string gate_ip              = 6;        // gateway ip
 }
 
 //NID_LOGIN_PLAYER_DELETE_REQ
@@ -122,15 +122,12 @@ message login_player_login_req
 {
     string open_id              = 1;        // open_id
     uint64 player_id            = 2;        // 角色id
-    uint32 lobby                = 3;        // lobby id
-    uint32 token                = 4;        // 验证token
 }
 
 //NID_LOGIN_PLAYER_LOGIN_RES
 message login_player_login_res
 {
     uint32 error_code           = 1;        // 错误码
-    uint32 token                = 2;        // 重连token
 }
 
 //NID_LOGIN_PLAYER_LOGOUT_REQ
