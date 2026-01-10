@@ -1,33 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <controller name="status" pages="0,choose,1,create" selected="0"/>
+  <controller name="gender" pages="0,male,1,female" selected="0"/>
   <displayList>
-    <image id="n0_r0lu" name="n0" src="aw78a" fileName="images/bg.jpg" xy="0,0" size="1920,1080"/>
-    <list id="n4_m07e" name="role_list" xy="685,266" size="608,651" layout="row" overflow="scroll" scroll="horizontal" scrollBarFlags="2" scrollBar="hidden" clipSoftness="20,0" colGap="20" defaultItem="ui://sg3bb1b2r0lu5">
-      <gearDisplay controller="status" pages="0,1"/>
-      <relation target="" sidePair="center-center"/>
-      <item url="ui://9tgfnqvnaw785"/>
-      <item url="ui://9tgfnqvnaw786"/>
-    </list>
-    <component id="n7_m07e" name="name" src="v1sh4i" fileName="widget/editbox/editbox1.xml" pkg="9i7luk0q" xy="682,923" size="616,74" touchable="false">
-      <gearDisplay controller="status" pages="0"/>
-      <Label titleColor="#ffffff" titleFontSize="40"/>
-    </component>
-    <component id="n8_ihng" name="close" src="v1sh4f" fileName="widget/button/btn_close1.xml" pkg="9i7luk0q" xy="1777,28" size="80,80"/>
-    <component id="n6_m07e" name="random" src="aw78b" fileName="btn_dance.xml" xy="1225,929">
+    <image id="n0_r0lu" name="n0" src="aw78a" fileName="images/bg.jpg" xy="0,0" size="1920,1080">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <component id="n14_nghm" name="avatar0" src="nghmd" fileName="avatar.xml" xy="548,94" size="823,892" aspect="true" controller="gender,0">
       <gearDisplay controller="status" pages="1"/>
+      <relation target="" sidePair="center-center"/>
     </component>
-    <component id="n1_r0lu" name="enter" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1460,920" size="300,80">
+    <component id="n8_ihng" name="close" src="v1sh4f" fileName="widget/button/btn_close1.xml" pkg="9i7luk0q" xy="1803,32" size="80,80">
+      <relation target="" sidePair="left-right,top-top"/>
+    </component>
+    <component id="n1_r0lu" name="enter" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1521,903" size="300,83">
       <gearDisplay controller="status" pages="0"/>
+      <relation target="" sidePair="right-right%,top-bottom%"/>
       <Button title="进入游戏"/>
     </component>
-    <component id="n9_7evw" name="create" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1460,920" size="300,80">
+    <component id="n6_m07e" name="random" src="aw78b" fileName="btn_dance.xml" xy="1709,560" group="n20_nghm">
+      <gearDisplay controller="status" pages="1"/>
+      <relation target="" sidePair="right-right%,bottom-bottom%"/>
+    </component>
+    <component id="n9_7evw" name="create" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1258,725" size="515,91" group="n20_nghm">
       <gearDisplay2 controller="status" pages="1" condition="0"/>
+      <relation target="" sidePair="right-right%,bottom-bottom%"/>
       <Button title="创建角色"/>
     </component>
-    <component id="n10_gap0" name="cname" src="v1sh4i" fileName="widget/editbox/editbox1.xml" pkg="9i7luk0q" xy="684,923" size="507,74">
+    <component id="n10_gap0" name="cname" src="v1sh4i" fileName="widget/editbox/editbox1.xml" pkg="9i7luk0q" xy="1258,554" size="436,74" group="n20_nghm">
       <gearDisplay controller="status" pages="1"/>
+      <relation target="" sidePair="right-right%,bottom-bottom%"/>
       <Label titleFontSize="40" prompt="请输入角色名称"/>
+    </component>
+    <component id="n15_nghm" name="n15" src="v1sh4p" fileName="widget/checkbox/checkbox2.xml" pkg="9i7luk0q" xy="1258,396" size="68,68" group="n20_nghm" aspect="true">
+      <gearDisplay controller="status" pages="1"/>
+      <relation target="" sidePair="right-right%,bottom-bottom%"/>
+      <Button checked="true" title="男" titleColor="#ffffff" titleFontSize="40" controller="gender" page="0"/>
+    </component>
+    <component id="n18_nghm" name="n18" src="v1sh4p" fileName="widget/checkbox/checkbox2.xml" pkg="9i7luk0q" xy="1471,396" size="68,68" group="n20_nghm" aspect="true">
+      <gearDisplay controller="status" pages="1"/>
+      <relation target="" sidePair="right-right%,bottom-bottom%"/>
+      <Button title="女" titleColor="#ffffff" titleFontSize="40" controller="gender" page="1"/>
+    </component>
+    <group id="n20_nghm" name="n20" xy="1258,396" size="517,420"/>
+    <component id="n21_nghm" name="avatar1" src="nghmd" fileName="avatar.xml" xy="499,333" size="400,433" aspect="true" controller="gender,1,nameable,1">
+      <gearDisplay controller="status" pages="0"/>
+      <relation target="" sidePair="width-width%,height-height%,left-left%,bottom-bottom%"/>
+    </component>
+    <component id="n22_nghm" name="avatar2" src="nghmd" fileName="avatar.xml" xy="1101,78" size="400,433" aspect="true" controller="gender,1,nameable,1">
+      <gearDisplay controller="status" pages="0"/>
+      <relation target="" sidePair="width-width%,height-height%,right-right%,top-top%"/>
+    </component>
+    <component id="n23_nghm" name="avatar3" src="nghmd" fileName="avatar.xml" xy="912,519" size="400,433" aspect="true" controller="gender,1,nameable,1">
+      <gearDisplay controller="status" pages="0"/>
+      <relation target="" sidePair="width-width%,height-height%,left-left%,bottom-bottom%"/>
     </component>
   </displayList>
 </component>

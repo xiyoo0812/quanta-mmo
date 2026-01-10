@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="600,650">
+  <controller name="gender" exported="true" pages="0,male,1,female" selected="0"/>
+  <controller name="nameable" exported="true" pages="0,disable,1,enable" selected="1"/>
+  <displayList>
+    <image id="n5_nghm" name="n5" src="aw785" fileName="images/1.png" xy="0,0" size="600,650">
+      <gearDisplay controller="gender" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n6_nghm" name="n6" src="aw786" fileName="images/2.png" xy="0,0" size="600,650">
+      <gearDisplay controller="gender" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n7_nghm" name="n7" xy="-1,649" size="600,63" fontSize="40" color="#ffffff" align="center" autoSize="none" autoClearText="true" text="西门吹雪">
+      <gearDisplay controller="nameable" pages="1"/>
+      <relation target="" sidePair="width-width%,height-height%,topext-bottom"/>
+    </text>
+  </displayList>
+</component>
