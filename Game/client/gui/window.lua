@@ -102,6 +102,60 @@ function Window:register_widget_click(widget, response, child_name)
     end)
 end
 
+--注册响应事件
+function Window:register_click(child_name, response, widget_name)
+    local child = self:get_child(child_name, widget_name)
+    if child then
+        child.onClick:Add(function(...)
+            thread_mgr:fork(response, nil, ...)
+        end)
+    end
+end
+
+--注册响应事件
+function Window:register_widget_click(widget, response, child_name)
+    local child
+    if child_name then
+        child = widget:GetChild(child_name)
+    end
+    child = child or widget
+    child.onClick:Add(function(...)
+        thread_mgr:fork(response, nil, ...)
+    end)
+end
+
+--注册响应事件
+function Window:register_changed(child_name, response, widget_name)
+    local child = self:get_child(child_name, widget_name)
+    if child then
+        child.onChanged:Add(function(...)
+            thread_mgr:fork(response, nil, ...)
+        end)
+    end
+end
+
+--注册响应事件
+function Window:register_widget_changed(widget, response, child_name)
+    local child
+    if child_name then
+        child = widget:GetChild(child_name)
+    end
+    child = child or widget
+    child.onChanged:Add(function(...)
+        thread_mgr:fork(response, nil, ...)
+    end)
+end
+
+--注册响应事件
+function Window:register_controler_changed(ctrl_name, response, widget_name)
+    local controller = self:get_controller(ctrl_name, widget_name)
+    if controller then
+        controller.onChanged:Add(function(...)
+            thread_mgr:fork(response, nil, ...)
+        end)
+    end
+end
+
 --获取子窗口
 function Window:get_child(child_name, widget_name)
     if self.widget then
@@ -132,7 +186,7 @@ end
 function Window:get_controller_status(ctrl_name, widget_name)
     local controller = self:get_controller(ctrl_name, widget_name)
     if controller then
-        return controller:GetSelectedIndex()
+        return controller.selectedIndex
     end
     return 0
 end

@@ -1,52 +1,25 @@
---Player.lua
-local log_warn          = logger.warn
+--player.lua
+local log_info      = logger.info
 
-local LoginComponent    = import("component/login_component.lua")
+local event_mgr     = quanta.get("event_mgr")
 
-local Player = class(nil, LoginComponent)
-
+local Player = mixin()
 local prop = property(Player)
-prop:accessor("id", nil)    --id
+prop:reader("client", nil)
+prop:reader("open_id", nil)
+prop:reader("user_id", nil)
+prop:reader("lobby_id", nil)
+prop:reader("player_id", nil)
+prop:reader("gate_port", nil)
+prop:reader("gate_ip", nil)
+prop:reader("players", {})
 
 function Player:__init()
+    event_mgr:add_trigger(self, "on_gate_connected")
 end
 
--- 初始化
-function Player:setup(conf)
-    if not self:load(conf) then
-        log_warn("[Player][setup] {} load faild!", self.id)
-        return false
-    end
-    local setup_ok = self:collect("_setup")
-    if not setup_ok then
-        log_warn("[Player][setup] {} setup faild!", self.id)
-        return setup_ok
-    end
-    return setup_ok
+function Player:on_gate_connected()
+    log_info("[Player][on_gate_connected] connect gateway server success")
 end
-
---load
-function Player:load(conf)
-    return true
-end
-
---check
-function Player:check()
-    return true
-end
-
---update
-function Player:update(now)
-    if self:check(now) then
-        self:invoke("_update", now)
-    end
-end
-
---destory
-function Player:destory()
-    self:unload()
-end
-
-quanta.my_player = Player()
 
 return Player

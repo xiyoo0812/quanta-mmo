@@ -14,7 +14,7 @@
       <Label title="xiyoo0812" titleColor="#ffffff" titleFontSize="30" prompt="输入账户名" maxLength="16"/>
     </component>
     <component id="n24_olqi" name="password" src="v1sh4l" fileName="widget/editbox/editbox4.xml" pkg="9i7luk0q" xy="902,801" size="261,60" group="n27_olqi">
-      <Label titleColor="#ffffff" titleFontSize="30" prompt="输入密码" maxLength="10" password="true"/>
+      <Label title="123456" titleColor="#ffffff" titleFontSize="30" prompt="输入密码" maxLength="10" password="true"/>
     </component>
     <text id="n25_olqi" name="n25" xy="753,738" size="126,45" group="n27_olqi" fontSize="30" color="#ffffff" autoSize="none" strokeColor="#000000" text="账号："/>
     <text id="n26_olqi" name="n26" xy="753,812" size="126,45" group="n27_olqi" fontSize="30" color="#ffffff" autoSize="none" strokeColor="#000000" text="密码："/>

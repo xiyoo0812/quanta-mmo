@@ -2,7 +2,7 @@
 local log_err       = logger.err
 
 local event_mgr     = quanta.get("event_mgr")
-local my_player     = quanta.get("my_player")
+local my_account    = quanta.get("my_account")
 
 local Window = import("gui/Window.lua")
 local LoginUI = class(Window)
@@ -19,7 +19,7 @@ function LoginUI:init_event()
             log_err("账号或密码不能为空")
             return
         end
-        my_player:login_user(open_id, password)
+        my_account:connect(open_id, password)
     end)
 end
 

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="status" pages="0,choose,1,create" selected="0"/>
-  <controller name="gender" pages="0,male,1,female" selected="0"/>
+  <controller name="status" pages="0,choose,1,create" selected="1"/>
+  <controller name="gender" pages="0,male,1,female" selected="1"/>
   <displayList>
     <image id="n0_r0lu" name="n0" src="aw78a" fileName="images/bg.jpg" xy="0,0" size="1920,1080">
       <relation target="" sidePair="width-width,height-height"/>
@@ -32,15 +32,15 @@
       <relation target="" sidePair="right-right%,bottom-bottom%"/>
       <Label titleFontSize="40" prompt="请输入角色名称"/>
     </component>
-    <component id="n15_nghm" name="n15" src="v1sh4p" fileName="widget/checkbox/checkbox2.xml" pkg="9i7luk0q" xy="1258,396" size="68,68" group="n20_nghm" aspect="true">
+    <component id="n15_nghm" name="male" src="v1sh4p" fileName="widget/checkbox/checkbox2.xml" pkg="9i7luk0q" xy="1258,396" size="68,68" group="n20_nghm" aspect="true">
       <gearDisplay controller="status" pages="1"/>
       <relation target="" sidePair="right-right%,bottom-bottom%"/>
-      <Button checked="true" title="男" titleColor="#ffffff" titleFontSize="40" controller="gender" page="0"/>
+      <Button title="男" titleColor="#ffffff" titleFontSize="40" controller="gender" page="0"/>
     </component>
-    <component id="n18_nghm" name="n18" src="v1sh4p" fileName="widget/checkbox/checkbox2.xml" pkg="9i7luk0q" xy="1471,396" size="68,68" group="n20_nghm" aspect="true">
+    <component id="n18_nghm" name="female" src="v1sh4p" fileName="widget/checkbox/checkbox2.xml" pkg="9i7luk0q" xy="1471,396" size="68,68" group="n20_nghm" aspect="true">
       <gearDisplay controller="status" pages="1"/>
       <relation target="" sidePair="right-right%,bottom-bottom%"/>
-      <Button title="女" titleColor="#ffffff" titleFontSize="40" controller="gender" page="1"/>
+      <Button checked="true" title="女" titleColor="#ffffff" titleFontSize="40" controller="gender" page="1"/>
     </component>
     <group id="n20_nghm" name="n20" xy="1258,396" size="517,420"/>
     <component id="n21_nghm" name="avatar1" src="nghmd" fileName="avatar.xml" xy="499,333" size="400,433" aspect="true" controller="gender,1,nameable,1">
