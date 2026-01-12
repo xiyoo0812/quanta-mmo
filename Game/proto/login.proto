@@ -2,13 +2,20 @@ syntax = "proto3";
 
 package ncmd_cs;
 
+//捏脸数据定义
+message facade {
+    uint32 model                = 1;        // 模型ID
+    uint32 color                = 2;        // 肤色
+    uint32 head                 = 3;        // 头模ID
+}
+
 //角色信息
-message player_info
+message pla_info
 {
-    uint64 player_id              = 1;       // 角色id
-    string name                 = 2;       // 角色名字
-    uint32 gender               = 3;       // 角色性别
-    uint32 model                = 4;        // 模型ID
+    uint64 player_id            = 1;        // 角色id
+    string name                 = 2;        // 角色名字
+    uint32 gender               = 3;        // 角色性别
+    facade facade               = 4;        // 模型
 }
 
 //平台定义
@@ -32,7 +39,7 @@ message login_account_login_res
 {
     uint32 error_code           = 1;        // 错误码
     uint64 user_id              = 2;        // 第三方账号openid
-    repeated player_info players    = 3;        // 账号角色列表
+    repeated pla_info players   = 3;        // 账号角色列表
 }
 
 //NID_LOGIN_ACCOUNT_RELOAD_REQ
@@ -48,7 +55,7 @@ message login_account_reload_res
 {
     uint32 error_code           = 1;        // 错误码
     uint64 user_id              = 2;        // 角色账号ID
-    repeated player_info players    = 3;        // 账号角色列表
+    repeated pla_info players   = 3;        // 账号角色列表
 }
 
 //NID_LOGIN_RANDOM_NAME_REQ
@@ -63,12 +70,6 @@ message login_random_name_res
     string name                 = 2;        // 随机名字
 }
 
-//捏脸数据定义
-message playermodel {
-    uint32 model                = 1;        // 模型ID
-    uint32 color                = 2;        // 肤色
-    uint32 head                 = 3;        // 头模ID
-}
 
 //NID_LOGIN_PLAYER_CREATE_REQ
 message login_player_create_req
@@ -76,14 +77,14 @@ message login_player_create_req
     uint64 user_id              = 1;        // 账号id
     string name                 = 2;        // 名字
     uint32 gender               = 3;        // 性别
-    playermodel model           = 4;        // playermodel
+    facade facade               = 4;        // facade
 }
 
 //NID_LOGIN_PLAYER_CREATE_RES
 message login_player_create_res
 {
     uint32 error_code           = 1;        // 错误码
-    player_info player          = 2;        // 新角色信息
+    pla_info player             = 2;        // 新角色信息
 }
 
 //NID_LOGIN_PLAYER_CHOOSE_REQ

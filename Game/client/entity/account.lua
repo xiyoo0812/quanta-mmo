@@ -82,17 +82,17 @@ function Account:random_name()
     return ok, res.name
 end
 
-function Account:create_player(name, gender, playermodel)
-    local data = { user_id = self.user_id, name = name, gender = gender, model = playermodel }
+function Account:create_player(name, gender, facade)
+    local data = { user_id = self.user_id, name = name, gender = gender, facade = facade }
     local ok, res = self.client:call("NID_LOGIN_PLAYER_CREATE_REQ", data)
     log_debug("[Account][create_player] return: {}", res)
     if qfailed(res.error_code, ok) then
         log_err("[Account][create_player] create player failed: {}", res)
         return
     end
-    local player_info = res.player_info
-    self.players[player_info.player_id] = player_info
-    log_info("[Account][create_player] name : {}", player_info)
+    local player = res.player
+    self.players[player.player_id] = player
+    log_info("[Account][create_player] name : {}", player)
 end
 
 function Account:choose_player(player_id)
