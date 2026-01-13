@@ -6,7 +6,6 @@
     <component id="n4_v1sh" name="switch" src="v1sh46" fileName="widget/button/btn_main.xml" pkg="9i7luk0q" xy="1693,981" size="206,68">
       <Button title="切换账号"/>
     </component>
-    <image id="n20_olqi" name="n20" src="v1sh3n" fileName="box/UI_Common_Img_Gradualchange_2.png" pkg="9i7luk0q" xy="790,642" alpha="0.5"/>
     <component id="n8_v1sh" name="login" src="v1sh4b" fileName="widget/button/btn_passive.xml" pkg="9i7luk0q" xy="782,878" size="357,68" group="n27_olqi">
       <Button title="账号登录&#xA;"/>
     </component>

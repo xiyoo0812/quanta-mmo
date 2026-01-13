@@ -2,6 +2,8 @@
 local log_err           = logger.err
 local log_info          = logger.info
 local log_debug         = logger.debug
+local terase            = table.erase
+local tinsert           = table.insert
 local qfailed           = quanta.failed
 local guid_encode       = codec.guid_encode
 
@@ -38,6 +40,10 @@ function Account:has_player()
     return false
 end
 
+function Account:get_player(index)
+    return self.players[index]
+end
+
 function Account:on_tcp_connected()
     log_info("[Account][on_tcp_connected] connect login server success")
     self:login_account()
@@ -65,7 +71,9 @@ function Account:login_account()
     end
     self.device_id = device_id
     self.user_id = res.user_id
-    self.players = res.players
+    if res.players then
+        self.players = res.players
+    end
     event_mgr:notify_trigger("on_login_account_success")
     log_info("[Account][login_account] login account success!")
 end
@@ -86,11 +94,12 @@ function Account:create_player(name, gender, facade)
     log_debug("[Account][create_player] return: {}", res)
     if qfailed(res.error_code, ok) then
         log_err("[Account][create_player] create player failed: {}", res)
-        return
+        return false
     end
     local player = res.player
-    self.players[player.player_id] = player
+    tinsert(self.players, player)
     log_info("[Account][create_player] name : {}", player)
+    return true
 end
 
 function Account:choose_player(player_id)
@@ -108,16 +117,18 @@ function Account:choose_player(player_id)
     log_info("[Account][choose_player] name : {}", res)
 end
 
-function Account:delete_player(player_id)
+function Account:delete_player(player)
+    local player_id = player.player_id
     local data = { user_id = self.user_id, player_id = player_id }
     local ok, res = self.client:call("NID_LOGIN_PLAYER_DELETE_REQ", data)
     if qfailed(res.error_code, ok) then
         log_err("[Account][delete_player] delete player failed: {}", res)
-        return
+        return false
     end
-    self.players[player_id] = nil
+    terase(self.players, player)
     event_mgr:notify_trigger("on_delete_player_success")
     log_info("[Account][delete_player] delete player: {} success!", player_id)
+    return true
 end
 
 function Account:login_player(player_id)

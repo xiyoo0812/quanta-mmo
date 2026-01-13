@@ -14,7 +14,7 @@
     <component id="n8_ihng" name="close" src="v1sh4f" fileName="widget/button/btn_close1.xml" pkg="9i7luk0q" xy="1803,32" size="80,80">
       <relation target="" sidePair="left-right,top-top"/>
     </component>
-    <component id="n1_r0lu" name="enter" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1521,903" size="300,83">
+    <component id="n1_r0lu" name="enter" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1528,903" size="300,83">
       <gearDisplay controller="status" pages="0"/>
       <relation target="" sidePair="right-right%,top-bottom%"/>
       <Button title="进入游戏"/>
@@ -57,12 +57,17 @@
     <component id="n23_nghm" name="avatar1" src="do1re" fileName="avator.xml" xy="912,519" size="400,433" aspect="true" controller="gender,1,nameable,1">
       <gearDisplay controller="status" pages="0"/>
       <relation target="" sidePair="width-width%,height-height%,left-left%,bottom-bottom%"/>
-      <Button controller="selected" page="0"/>
+      <Button checked="true" controller="selected" page="0"/>
     </component>
-    <component id="n24_do1r" name="switch" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1521,816" size="300,83">
+    <component id="n24_do1r" name="switch" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1528,719" size="300,83">
       <gearDisplay controller="status" pages="0"/>
       <relation target="" sidePair="right-right%,top-bottom%"/>
       <Button title="创建新角色"/>
+    </component>
+    <component id="n25_qyyo" name="delete" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1528,811" size="300,83">
+      <gearDisplay controller="status" pages="0"/>
+      <relation target="" sidePair="right-right%,top-bottom%"/>
+      <Button title="删除角色"/>
     </component>
   </displayList>
 </component>
