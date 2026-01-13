@@ -10,7 +10,7 @@
     <image id="aw78a" name="bg.jpg" path="/images/" exported="true"/>
     <component id="aw78b" name="btn_dance.xml" path="/" exported="true"/>
     <image id="aw78c" name="dice.png" path="/images/" exported="true"/>
-    <component id="nghmd" name="avatar.xml" path="/" exported="true"/>
+    <component id="do1re" name="avator.xml" path="/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

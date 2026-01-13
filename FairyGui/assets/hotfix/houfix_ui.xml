@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
   <displayList>
-    <image id="n1_y6fm" name="bk" src="v1sh0" fileName="images/UI_Loading_Img_Bg_1.jpg" xy="0,-1" group="n8_y6fm">
+    <image id="n1_y6fm" name="bk" src="do1r4" fileName="images/BG1.jpg" xy="0,-1" size="1920,1080" group="n8_y6fm">
       <relation target="" sidePair="width-width,height-height"/>
     </image>
     <text id="n7_y6fm" name="title" xy="142,866" size="985,38" group="n8_y6fm" fontSize="24" color="#f2f2f2" vAlign="middle" autoSize="none" text="正在更新文件..."/>

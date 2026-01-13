@@ -112,7 +112,7 @@
     <image id="v1sh33" name="UI_Common_Img_Title_4.png" path="/title/" exported="true"/>
     <image id="v1sh34" name="UI_Common_Img_Box4xpR0_2.png" path="/box/" exported="true"/>
     <image id="v1sh35" name="UI_Common_Img_BoxR0_1.png" path="/box/" exported="true"/>
-    <image id="v1sh36" name="UI_Common_Img_Import_2.png" path="/box/" exported="true"/>
+    <image id="v1sh36" name="UI_Common_Img_Import_2.png" path="/box/" exported="true" scale="9grid" scale9grid="14,14,28,28"/>
     <image id="v1sh37" name="UI_Common_Img_Minus_1.png" path="/box/" exported="true"/>
     <image id="v1sh38" name="UI_Common_Img_Minus_1_1.png" path="/box/" exported="true"/>
     <image id="v1sh39" name="UI_Common_Img_New_1.png" path="/box/" exported="true"/>
@@ -141,7 +141,7 @@
     <image id="v1sh3w" name="UI_Common_Img_BoxR5_3.png" path="/box/" exported="true"/>
     <image id="v1sh3x" name="UI_Common_Img_BoxshadowR5_1.png" path="/box/" exported="true"/>
     <image id="v1sh3y" name="UI_Common_Img_checkbox_1.png" path="/box/" exported="true"/>
-    <image id="v1sh3z" name="UI_Common_Img_checkbox_2.png" path="/box/" exported="true"/>
+    <image id="v1sh3z" name="UI_Common_Img_checkbox_2.png" path="/box/" exported="true" scale9grid="11,11,22,22"/>
     <image id="v1sh40" name="UI_Common_Img_check_1.png" path="/box/" exported="true"/>
     <image id="v1sh41" name="UI_Common_Img_check_2.png" path="/box/" exported="true"/>
     <image id="v1sh42" name="UI_Common_Img_Circle_1.png" path="/box/" exported="true"/>
@@ -221,12 +221,12 @@
     <image id="udlw65" name="UI_Common_Btn_Comnot_nor.png" path="/button/"/>
     <image id="udlw66" name="UI_Common_Btn_ComnotY_nor.png" path="/button/"/>
     <image id="udlw67" name="UI_Storagebox_Btn_Classification_pre.png" path="/box/"/>
-    <image id="udlw68" name="UI_Storagebox_Btn_Classification_nor.png" path="/box/"/>
+    <image id="udlw68" name="UI_Storagebox_Btn_Classification_nor.png" path="/box/" exported="true" scale="9grid" scale9grid="14,14,28,28"/>
     <image id="udlw69" name="UI_Common_Btn_Comred_high.png" path="/button/"/>
     <image id="udlw6a" name="UI_Item_Img_Head_1.png" path="/box/"/>
-    <image id="udlw6b" name="UI_Common_Img_SelectedR5_1.png" path="/box/"/>
-    <image id="udlw6c" name="UI_Common_Img_SelectedR15_1.png" path="/box/"/>
-    <image id="udlw6d" name="UI_Common_Img_SelectedR0_1.png" path="/box/"/>
+    <image id="udlw6b" name="UI_Common_Img_SelectedR5_1.png" path="/box/" exported="true"/>
+    <image id="udlw6c" name="UI_Common_Img_SelectedR15_1.png" path="/box/" exported="true"/>
+    <image id="udlw6d" name="UI_Common_Img_SelectedR0_1.png" path="/box/" exported="true" scale="9grid" scale9grid="15,15,30,30"/>
     <image id="udlw6e" name="UI_Common_Img_Anglerounded_3.png" path="/box/"/>
     <image id="udlw6f" name="UI_Common_Img_Anglerounded_2.png" path="/box/"/>
     <image id="udlw6g" name="UI_Common_Img_Anglerounded_1.png" path="/box/"/>

@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <component size="1920,1080">
-  <controller name="status" pages="0,choose,1,create" selected="1"/>
-  <controller name="gender" pages="0,male,1,female" selected="1"/>
+  <controller name="status" pages="0,choose,1,create" selected="0"/>
+  <controller name="gender" pages="0,male,1,female" selected="0"/>
+  <controller name="selected" pages="0,player1,1,player2,2,player3" selected="0"/>
   <displayList>
     <image id="n0_r0lu" name="n0" src="aw78a" fileName="images/bg.jpg" xy="0,0" size="1920,1080">
       <relation target="" sidePair="width-width,height-height"/>
     </image>
-    <component id="n14_nghm" name="avatar0" src="nghmd" fileName="avatar.xml" xy="548,94" size="823,892" aspect="true" controller="gender,0">
+    <component id="n14_nghm" name="avatar0" src="do1re" fileName="avator.xml" xy="548,94" size="823,892" aspect="true" controller="gender,0">
       <gearDisplay controller="status" pages="1"/>
       <relation target="" sidePair="center-center"/>
     </component>
@@ -35,25 +36,33 @@
     <component id="n15_nghm" name="male" src="v1sh4p" fileName="widget/checkbox/checkbox2.xml" pkg="9i7luk0q" xy="1258,396" size="68,68" group="n20_nghm" aspect="true">
       <gearDisplay controller="status" pages="1"/>
       <relation target="" sidePair="right-right%,bottom-bottom%"/>
-      <Button title="男" titleColor="#ffffff" titleFontSize="40" controller="gender" page="0"/>
+      <Button checked="true" title="男" titleColor="#ffffff" titleFontSize="40" controller="gender" page="0"/>
     </component>
     <component id="n18_nghm" name="female" src="v1sh4p" fileName="widget/checkbox/checkbox2.xml" pkg="9i7luk0q" xy="1471,396" size="68,68" group="n20_nghm" aspect="true">
       <gearDisplay controller="status" pages="1"/>
       <relation target="" sidePair="right-right%,bottom-bottom%"/>
-      <Button checked="true" title="女" titleColor="#ffffff" titleFontSize="40" controller="gender" page="1"/>
+      <Button title="女" titleColor="#ffffff" titleFontSize="40" controller="gender" page="1"/>
     </component>
     <group id="n20_nghm" name="n20" xy="1258,396" size="517,420"/>
-    <component id="n21_nghm" name="avatar1" src="nghmd" fileName="avatar.xml" xy="499,333" size="400,433" aspect="true" controller="gender,1,nameable,1">
+    <component id="n21_nghm" name="avatar2" src="do1re" fileName="avator.xml" xy="499,333" size="400,433" aspect="true" controller="gender,1,nameable,1">
       <gearDisplay controller="status" pages="0"/>
       <relation target="" sidePair="width-width%,height-height%,left-left%,bottom-bottom%"/>
+      <Button controller="selected" page="1"/>
     </component>
-    <component id="n22_nghm" name="avatar2" src="nghmd" fileName="avatar.xml" xy="1101,78" size="400,433" aspect="true" controller="gender,1,nameable,1">
+    <component id="n22_nghm" name="avatar3" src="do1re" fileName="avator.xml" xy="1101,78" size="400,433" aspect="true" controller="gender,1,nameable,1">
       <gearDisplay controller="status" pages="0"/>
       <relation target="" sidePair="width-width%,height-height%,right-right%,top-top%"/>
+      <Button controller="selected" page="2"/>
     </component>
-    <component id="n23_nghm" name="avatar3" src="nghmd" fileName="avatar.xml" xy="912,519" size="400,433" aspect="true" controller="gender,1,nameable,1">
+    <component id="n23_nghm" name="avatar1" src="do1re" fileName="avator.xml" xy="912,519" size="400,433" aspect="true" controller="gender,1,nameable,1">
       <gearDisplay controller="status" pages="0"/>
       <relation target="" sidePair="width-width%,height-height%,left-left%,bottom-bottom%"/>
+      <Button controller="selected" page="0"/>
+    </component>
+    <component id="n24_do1r" name="switch" src="v1sh4d" fileName="widget/button/btn_paper3.xml" pkg="9i7luk0q" xy="1521,816" size="300,83">
+      <gearDisplay controller="status" pages="0"/>
+      <relation target="" sidePair="right-right%,top-bottom%"/>
+      <Button title="创建新角色"/>
     </component>
   </displayList>
 </component>

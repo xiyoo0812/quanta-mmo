@@ -65,9 +65,7 @@ function Account:login_account()
     end
     self.device_id = device_id
     self.user_id = res.user_id
-    for _, player in ipairs(res.players or {}) do
-        self.players[player.player_id] = player
-    end
+    self.players = res.players
     event_mgr:notify_trigger("on_login_account_success")
     log_info("[Account][login_account] login account success!")
 end
