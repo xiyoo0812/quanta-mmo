@@ -12,6 +12,7 @@ local protobuf_mgr      = quanta.get("protobuf_mgr")
 
 local PLAT_PASSWORD     = protobuf_mgr:enum("platform_type", "PLATFORM_PASSWORD")
 
+local Player            = import("entity/player.lua")
 local TcpClient         = import("network/tcp_client.lua")
 
 local Account = class()
@@ -19,33 +20,27 @@ local prop = property(Account)
 prop:reader("client", nil)
 prop:reader("open_id", nil)
 prop:reader("user_id", nil)
-prop:reader("lobby_id", nil)
 prop:reader("password", nil)
 prop:reader("device_id", nil)
-prop:reader("player_id", nil)
-prop:reader("verify_code", nil)
-prop:reader("gate_port", nil)
-prop:reader("gate_ip", nil)
+prop:reader("cur_player", nil)
 prop:reader("players", {})
 
 function Account:__init()
     event_mgr:add_trigger(self, "on_tcp_connected")
-    event_mgr:add_trigger(self, "on_gate_connected")
 end
 
-function Account:exit()
+function Account:close()
     self.client:close()
     self.client = nil
     self.open_id = nil
     self.user_id = nil
-    self.lobby_id = nil
     self.password = nil
     self.device_id = nil
-    self.player_id = nil
-    self.verify_code = nil
-    self.gate_port = nil
-    self.gate_ip = nil
     self.players = {}
+    if self.cur_player then
+        self.cur_player:close()
+        self.cur_player = nil
+    end
 end
 
 function Account:has_player()
@@ -68,7 +63,7 @@ function Account:connect(open_id, password)
     self.open_id = open_id
     self.password = password
     local ip, port = environ.addr("QUANTA_LOGIN_ADDR")
-    log_info("[Account][login_user] {} login {}:{}", self.open_id, ip, port)
+    log_info("[Account][connect] {} connect {}:{}", self.open_id, ip, port)
     self.client = TcpClient(ip, port)
     self.client:start()
 end
@@ -109,12 +104,12 @@ function Account:create_player(name, gender, facade)
     log_debug("[Account][create_player] return: {}", res)
     if qfailed(res.error_code, ok) then
         log_err("[Account][create_player] create player failed: {}", res)
-        return false
+        return
     end
     local player = res.player
     tinsert(self.players, player)
     log_info("[Account][create_player] name : {}", player)
-    return true
+    return player
 end
 
 function Account:choose_player(player_id)
@@ -124,12 +119,10 @@ function Account:choose_player(player_id)
         log_err("[Account][choose_player] create player failed: {}", res)
         return
     end
-    self.gate_ip = res.gate_ip
-    self.lobby_id = res.lobby_id
-    self.gate_port = res.gate_port
-    self.player_id = res.player_id
-    self.verify_code = res.verify_code
-    log_info("[Account][choose_player] name : {}", res)
+    log_info("[Account][choose_player] res : {}", res)
+    local player = Player(self.open_id, self.user_id, res.player_id)
+    player:connect(res.gate_ip, res.gate_port, player.lobby_id, player.verify_code)
+    self.cur_player = player
 end
 
 function Account:delete_player(player)

@@ -2,9 +2,9 @@
 <packageDescription id="90y9yq7r">
   <resources>
     <component id="udlw1" name="houfix_ui.xml" path="/" exported="true"/>
-    <component id="udlw2" name="progressbar.xml" path="/" exported="true"/>
     <image id="udlw3" name="UI_Login_Img_Carriage_1.png" path="/images/" exported="true"/>
     <image id="do1r4" name="BG1.jpg" path="/images/" exported="true"/>
+    <component id="udlw2" name="progressbar.xml" path="/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>

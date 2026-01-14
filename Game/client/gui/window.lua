@@ -85,7 +85,7 @@ function Window:register_click(child_name, response, widget_name)
     local child = self:get_child(child_name, widget_name)
     if child then
         child.onClick:Add(function(...)
-            thread_mgr:fork(response, nil, ...)
+            thread_mgr:fork(response, nil, self, ...)
         end)
     end
 end
@@ -98,7 +98,7 @@ function Window:register_widget_click(widget, response, child_name)
     end
     child = child or widget
     child.onClick:Add(function(...)
-        thread_mgr:fork(response, nil, ...)
+        thread_mgr:fork(response, nil, self, ...)
     end)
 end
 
@@ -107,7 +107,7 @@ function Window:register_click(child_name, response, widget_name)
     local child = self:get_child(child_name, widget_name)
     if child then
         child.onClick:Add(function(...)
-            thread_mgr:fork(response, nil, ...)
+            thread_mgr:fork(response, nil, self, ...)
         end)
     end
 end
@@ -120,7 +120,7 @@ function Window:register_widget_click(widget, response, child_name)
     end
     child = child or widget
     child.onClick:Add(function(...)
-        thread_mgr:fork(response, nil, ...)
+        thread_mgr:fork(response, nil, self, ...)
     end)
 end
 

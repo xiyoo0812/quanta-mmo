@@ -1,5 +1,4 @@
 --char_ui.lua
-local log_err       = logger.err
 local sformat       = string.format
 
 local my_account    = quanta.get("my_account")
@@ -12,43 +11,13 @@ function CharUI:__init()
 end
 
 function CharUI:init_event()
-    self:register_click("close", function()
-        my_account:exit()
-        self:open_gui("login_ui")
-    end)
-    self:register_click("random", function()
-        local ok, name = my_account:random_name()
-        if ok then
-            self:set_child_text("cname", name)
-        end
-    end)
-    self:register_controler_changed("gender", function(context)
-        self:set_controller_status("gender", context.sender.selectedIndex, "avatar0")
-    end)
-    self:register_click("create", function()
-        local name = self:get_child_text("cname")
-        local gender = self:get_controller_status("gender")
-        if my_account:create_player(name, gender, { model = gender }) then
-            self:set_controller_status("status",  0)
-            self:show_players()
-        end
-    end)
-    self:register_click("delete", function()
-        local index = self:get_controller_status("selected")
-        local player = my_account:get_player(index + 1)
-        if player then
-            if my_account:delete_player(player) then
-                self:init_component()
-            end
-        end
-    end)
-    self:register_click("switch", function()
-        self:set_child_text("cname", "")
-        self:set_controller_status("status",  1)
-    end)
-    self:register_click("enter", function()
-        log_err("进入游戏")
-    end)
+    self:register_click("close", self.back_main)
+    self:register_click("random", self.rand_name)
+    self:register_click("enter", self.enter_game)
+    self:register_click("create", self.create_player)
+    self:register_click("delete", self.delete_player)
+    self:register_click("switch", self.switch_create)
+    self:register_controler_changed("gender", self.gender_changed)
 end
 
 function CharUI:init_component()
@@ -74,6 +43,62 @@ function CharUI:show_players()
             self:set_controller_status("gender",  player.gender, child_name)
         end
     end
+end
+function CharUI:create_player()
+    local name = self:get_child_text("cname")
+    local gender = self:get_controller_status("gender")
+    local player = my_account:create_player(name, gender, { model = gender })
+    if player then
+        self:choose_player(player.player_id)
+    end
+end
+
+function CharUI:delete_player()
+    local index = self:get_controller_status("selected")
+    local player = my_account:get_player(index + 1)
+    if player then
+        if my_account:delete_player(player) then
+            self:init_component()
+        end
+    end
+end
+
+function CharUI:rand_name()
+    local ok, name = my_account:random_name()
+    if ok then
+        self:set_child_text("cname", name)
+    end
+end
+
+function CharUI:enter_game()
+    local index = self:get_controller_status("selected")
+    local player = my_account:get_player(index + 1)
+    if player then
+        self:choose_player(player.player_id)
+    end
+end
+
+function CharUI:choose_player(player_id)
+    local player = my_account:choose_player(player_id)
+    if player then
+        self:open_gui("loading_ui")
+    else
+        self:back_main()
+    end
+end
+
+function CharUI:back_main()
+    my_account:close()
+    self:open_gui("login_ui")
+end
+
+function CharUI:switch_create()
+    self:set_child_text("cname", "")
+    self:set_controller_status("status",  1)
+end
+
+function CharUI:gender_changed(context)
+    self:set_controller_status("gender", context.sender.selectedIndex, "avatar0")
 end
 
 return CharUI

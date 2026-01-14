@@ -7,7 +7,7 @@
     <image id="n1_olqi" name="bar" src="olqi4t" fileName="progress/progress_fill_green.png" xy="2,2" size="186,41">
       <relation target="" sidePair="topext-top,bottomext-bottom"/>
     </image>
-    <text id="n2_olqi" name="title" xy="0,0" size="190,45" fontSize="12" align="center" vAlign="middle" autoSize="none" text="">
+    <text id="n2_olqi" name="title" xy="0,0" size="190,45" fontSize="30" align="center" vAlign="middle" autoSize="none" text="">
       <relation target="" sidePair="width-width,height-height"/>
     </text>
   </displayList>

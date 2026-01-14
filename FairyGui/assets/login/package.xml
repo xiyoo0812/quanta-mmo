@@ -11,6 +11,7 @@
     <component id="aw78b" name="btn_dance.xml" path="/" exported="true"/>
     <image id="aw78c" name="dice.png" path="/images/" exported="true"/>
     <component id="do1re" name="avator.xml" path="/" exported="true"/>
+    <component id="nnsof" name="loading_ui.xml" path="/" exported="true"/>
   </resources>
   <publish name=""/>
 </packageDescription>
