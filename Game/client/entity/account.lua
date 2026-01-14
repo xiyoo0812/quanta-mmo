@@ -33,6 +33,21 @@ function Account:__init()
     event_mgr:add_trigger(self, "on_gate_connected")
 end
 
+function Account:exit()
+    self.client:close()
+    self.client = nil
+    self.open_id = nil
+    self.user_id = nil
+    self.lobby_id = nil
+    self.password = nil
+    self.device_id = nil
+    self.player_id = nil
+    self.verify_code = nil
+    self.gate_port = nil
+    self.gate_ip = nil
+    self.players = {}
+end
+
 function Account:has_player()
     if next(self.players) then
         return true

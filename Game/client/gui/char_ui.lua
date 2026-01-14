@@ -13,6 +13,7 @@ end
 
 function CharUI:init_event()
     self:register_click("close", function()
+        my_account:exit()
         self:open_gui("login_ui")
     end)
     self:register_click("random", function()
@@ -42,6 +43,7 @@ function CharUI:init_event()
         end
     end)
     self:register_click("switch", function()
+        self:set_child_text("cname", "")
         self:set_controller_status("status",  1)
     end)
     self:register_click("enter", function()
@@ -54,6 +56,7 @@ function CharUI:init_component()
         self:set_controller_status("status",  0)
         self:show_players()
     else
+        self:set_child_text("cname", "")
         self:set_controller_status("status",  1)
         self:set_controller_status("gender",  0, "avatar0")
     end
