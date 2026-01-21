@@ -1,6 +1,7 @@
 --char_ui.lua
 local sformat       = string.format
 
+local event_mgr     = quanta.get("event_mgr")
 local my_account    = quanta.get("my_account")
 
 local Window = import("gui/Window.lua")
@@ -11,13 +12,13 @@ function CharUI:__init()
 end
 
 function CharUI:init_event()
-    self:register_click("close", self.back_main)
-    self:register_click("random", self.rand_name)
-    self:register_click("enter", self.enter_game)
-    self:register_click("create", self.create_player)
-    self:register_click("delete", self.delete_player)
-    self:register_click("switch", self.switch_create)
-    self:register_controler_changed("gender", self.gender_changed)
+    self:register_click("close", "back_main")
+    self:register_click("random", "rand_name")
+    self:register_click("enter", "enter_game")
+    self:register_click("create", "create_player")
+    self:register_click("delete", "delete_player")
+    self:register_click("switch", "switch_create")
+    self:register_controler_changed("gender", "gender_changed")
 end
 
 function CharUI:init_component()
@@ -29,6 +30,11 @@ function CharUI:init_component()
         self:set_controller_status("status",  1)
         self:set_controller_status("gender",  0, "avatar0")
     end
+    event_mgr:add_trigger(self, "on_login_player_callback")
+end
+
+function CharUI:on_close()
+    event_mgr:remove_trigger(self, "on_login_player_callback")
 end
 
 function CharUI:show_players()
@@ -49,7 +55,7 @@ function CharUI:create_player()
     local gender = self:get_controller_status("gender")
     local player = my_account:create_player(name, gender, { model = gender })
     if player then
-        self:choose_player(player.player_id)
+        my_account:choose_player(player.player_id)
     end
 end
 
@@ -74,13 +80,12 @@ function CharUI:enter_game()
     local index = self:get_controller_status("selected")
     local player = my_account:get_player(index + 1)
     if player then
-        self:choose_player(player.player_id)
+        my_account:choose_player(player.player_id)
     end
 end
 
-function CharUI:choose_player(player_id)
-    local player = my_account:choose_player(player_id)
-    if player then
+function CharUI:on_login_player_callback(ok)
+    if ok then
         self:open_gui("loading_ui")
     else
         self:back_main()

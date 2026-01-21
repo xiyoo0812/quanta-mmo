@@ -1,4 +1,5 @@
 --player.lua
+local log_err       = logger.err
 local log_info      = logger.info
 local qfailed       = quanta.failed
 
@@ -43,9 +44,18 @@ function Player:login_player()
     if qfailed(res.error_code, ok) then
         log_info("[Player][login_player] login player failed: {}", res)
         self.client:close()
-        return
     end
-    event_mgr:notify_trigger("on_login_player_success")
+    event_mgr:notify_trigger("on_login_player_callback", ok)
+end
+
+function Player:logout_player(player_id)
+    local data = { open_id = self.open_id, player_id = player_id }
+    local ok, res = self.client:call("NID_LOGIN_PLAYER_LOGOUT_REQ", data)
+    if qfailed(res.error_code, ok) then
+        log_err("[Player][logout_player] logout player failed: {}", res)
+    end
+    event_mgr:notify_trigger("on_logout_player_callback")
+    log_info("[Account][logout_player] logout player: {} success!", player_id)
 end
 
 return Player

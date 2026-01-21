@@ -139,28 +139,6 @@ function Account:delete_player(player)
     return true
 end
 
-function Account:login_player(player_id)
-    local data = { open_id = self.open_id, player_id = player_id }
-    local ok, res = self.client:call("NID_LOGIN_PLAYER_LOGIN_REQ", data)
-    if qfailed(res.error_code, ok) then
-        log_err("[Account][login_player] delete player failed: {}", res)
-        return
-    end
-    event_mgr:notify_trigger("on_login_player_success")
-    log_info("[Account][login_player] login player: {} success!", player_id)
-end
-
-function Account:logout_player(player_id)
-    local data = { open_id = self.open_id, player_id = player_id }
-    local ok, res = self.client:call("NID_LOGIN_PLAYER_LOGIN_REQ", data)
-    if qfailed(res.error_code, ok) then
-        log_err("[Account][logout_player] delete player failed: {}", res)
-        return
-    end
-    event_mgr:notify_trigger("on_logout_player_success")
-    log_info("[Account][logout_player] logout player: {} success!", player_id)
-end
-
 quanta.my_account = Account()
 
 return Account

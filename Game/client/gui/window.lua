@@ -81,77 +81,55 @@ function Window:close()
 end
 
 --注册响应事件
-function Window:register_click(child_name, response, widget_name)
+function Window:register_click(child_name, func_name, widget_name)
     local child = self:get_child(child_name, widget_name)
     if child then
         child.onClick:Add(function(...)
-            thread_mgr:fork(response, nil, self, ...)
+            thread_mgr:fork(self[func_name], nil, self, ...)
         end)
     end
 end
 
 --注册响应事件
-function Window:register_widget_click(widget, response, child_name)
+function Window:register_widget_click(widget, func_name, child_name)
     local child
     if child_name then
         child = widget:GetChild(child_name)
     end
     child = child or widget
     child.onClick:Add(function(...)
-        thread_mgr:fork(response, nil, self, ...)
+        thread_mgr:fork(self[func_name], nil, self, ...)
     end)
 end
 
 --注册响应事件
-function Window:register_click(child_name, response, widget_name)
-    local child = self:get_child(child_name, widget_name)
-    if child then
-        child.onClick:Add(function(...)
-            thread_mgr:fork(response, nil, self, ...)
-        end)
-    end
-end
-
---注册响应事件
-function Window:register_widget_click(widget, response, child_name)
-    local child
-    if child_name then
-        child = widget:GetChild(child_name)
-    end
-    child = child or widget
-    child.onClick:Add(function(...)
-        thread_mgr:fork(response, nil, self, ...)
-    end)
-end
-
---注册响应事件
-function Window:register_changed(child_name, response, widget_name)
+function Window:register_changed(child_name, func_name, widget_name)
     local child = self:get_child(child_name, widget_name)
     if child then
         child.onChanged:Add(function(...)
-            thread_mgr:fork(response, nil, ...)
+            thread_mgr:fork(self[func_name], nil, self, ...)
         end)
     end
 end
 
 --注册响应事件
-function Window:register_widget_changed(widget, response, child_name)
+function Window:register_widget_changed(widget, func_name, child_name)
     local child
     if child_name then
         child = widget:GetChild(child_name)
     end
     child = child or widget
     child.onChanged:Add(function(...)
-        thread_mgr:fork(response, nil, ...)
+        thread_mgr:fork(self[func_name], nil, self, ...)
     end)
 end
 
 --注册响应事件
-function Window:register_controler_changed(ctrl_name, response, widget_name)
+function Window:register_controler_changed(ctrl_name, func_name, widget_name)
     local controller = self:get_controller(ctrl_name, widget_name)
     if controller then
         controller.onChanged:Add(function(...)
-            thread_mgr:fork(response, nil, ...)
+            thread_mgr:fork(self[func_name], nil, self, ...)
         end)
     end
 end
