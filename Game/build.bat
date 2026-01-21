@@ -2,8 +2,9 @@
 
 cd .\quanta
 
+set path==%path%;C:\Program Files\Microsoft Visual Studio\18\Community\Common7\IDE
 set path==%path%;C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE
-devenv.com .\quanta.sln /Build
+devenv.com .\quanta.sln /Build  "Release|x64"
 
 cd ../
 xcopy .\quanta\bin\*.dll  .\sbin  /y /s
