@@ -39,7 +39,7 @@ function Player:on_gate_connected()
 end
 
 function Player:login_player()
-    local data = { openid = self.open_id, player_id = self.player_id }
+    local data = { open_id = self.open_id, player_id = self.player_id }
     local ok, res = self.client:call_lobby("NID_LOGIN_PLAYER_LOGIN_REQ", data)
     if qfailed(res.error_code, ok) then
         log_err("[Player][login_player] login player failed: {}", res)

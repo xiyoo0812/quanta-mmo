@@ -30,13 +30,15 @@ function Account:__init()
 end
 
 function Account:close()
-    self.client:close()
-    self.client = nil
     self.open_id = nil
     self.user_id = nil
     self.password = nil
     self.device_id = nil
     self.players = {}
+    if self.client then
+        self.client:close()
+        self.client = nil
+    end
     if self.cur_player then
         self.cur_player:close()
         self.cur_player = nil
