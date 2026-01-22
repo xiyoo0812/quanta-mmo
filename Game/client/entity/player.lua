@@ -7,7 +7,7 @@ local event_mgr     = quanta.get("event_mgr")
 
 local GateClient    = import("network/gate_client.lua")
 
-local Player = mixin()
+local Player = class()
 local prop = property(Player)
 prop:reader("client", nil)
 prop:reader("open_id", nil)

@@ -108,7 +108,7 @@ function Account:create_player(name, gender, facade)
     end
     local player = res.player
     tinsert(self.players, player)
-    log_info("[Account][create_player] name : {}", player)
+    log_debug("[Account][create_player] name : {}", player)
     return player
 end
 
@@ -119,7 +119,7 @@ function Account:choose_player(player_id)
         log_err("[Account][choose_player] create player failed: {}", res)
         return
     end
-    log_info("[Account][choose_player] res : {}", res)
+    log_debug("[Account][choose_player] res : {}", res)
     local player = Player(self.open_id, self.user_id, res.player_id)
     player:connect(res.gate_ip, res.gate_port, player.lobby_id, player.verify_code)
     self.cur_player = player

@@ -1,7 +1,6 @@
 --window_mgr.lua
 
 local log_err       = logger.err
-local log_info      = logger.info
 local sformat       = string.format
 
 local ABMgr         = CS.ABMgr
