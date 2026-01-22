@@ -62,3 +62,9 @@ message gate_verify_code_ntf
 {
     uint32 verify_code          = 1;    // 验证码
 }
+
+//NID_GATE_LOST_CLIENT_NTF
+message gate_lost_client_ntf
+{
+    uint32 player_id            = 1;    // 玩家id
+}

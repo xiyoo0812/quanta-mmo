@@ -119,10 +119,14 @@ function Account:choose_player(player_id)
         log_err("[Account][choose_player] create player failed: {}", res)
         return
     end
+    --关闭旧链接
+    self.client:close()
+    self.client = nil
     log_debug("[Account][choose_player] res : {}", res)
     local player = Player(self.open_id, self.user_id, res.player_id)
-    player:connect(res.gate_ip, res.gate_port, player.lobby_id, player.verify_code)
+    player:connect(res.gate_ip, res.gate_port, res.lobby_id, res.verify_code)
     self.cur_player = player
+    return player
 end
 
 function Account:delete_player(player)

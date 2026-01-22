@@ -30,7 +30,6 @@ end
 function Player:connect(ip, port, lobby_id, verify_code)
     log_info("[Player][connect] {} connect {}:{}", self.player_id, ip, port)
     self.client = GateClient(ip, port, self.player_id, lobby_id, verify_code)
-    self.client:start()
 end
 
 function Player:on_gate_connected()
