@@ -5,8 +5,7 @@ local Window = import("gui/Window.lua")
 local MainUI = class(Window)
 
 function MainUI:__init()
-    self:load_layout("main_ui", "main_ui")
-    self:set_child_url("ground", "Image/CG/1")
+    self:load_layout("main", "main_ui")
 end
 
 function MainUI:init_event()

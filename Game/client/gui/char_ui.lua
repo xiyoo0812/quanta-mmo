@@ -86,7 +86,7 @@ end
 
 function CharUI:on_login_player_callback(ok)
     if ok then
-        self:open_gui("loading_ui")
+        self:open_gui("loading_ui", true)
     else
         self:back_main()
     end
