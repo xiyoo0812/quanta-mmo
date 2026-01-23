@@ -38,10 +38,10 @@ function CharUI:on_close()
 end
 
 function CharUI:show_players()
-    local players = my_account:get_players()
-    self:show_child("switch", #players < 3)
+    local pla_infos = my_account:get_players()
+    self:show_child("switch", #pla_infos < 3)
     for index = 1, 3 do
-        local player = players[index]
+        local player = pla_infos[index]
         local child_name = sformat("avatar%d", index)
         self:show_child(child_name, player ~= nil)
         if player then
@@ -61,9 +61,9 @@ end
 
 function CharUI:delete_player()
     local index = self:get_controller_status("selected")
-    local player = my_account:get_player(index + 1)
-    if player then
-        if my_account:delete_player(player) then
+    local pla_info = my_account:get_player_info(index + 1)
+    if pla_info then
+        if my_account:delete_player(pla_info) then
             self:init_component()
         end
     end
@@ -78,9 +78,9 @@ end
 
 function CharUI:enter_game()
     local index = self:get_controller_status("selected")
-    local player = my_account:get_player(index + 1)
-    if player then
-        my_account:choose_player(player.player_id)
+    local pla_info = my_account:get_player_info(index + 1)
+    if pla_info then
+        my_account:choose_player(pla_info.player_id)
     end
 end
 

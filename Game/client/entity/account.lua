@@ -22,7 +22,7 @@ prop:reader("open_id", nil)
 prop:reader("user_id", nil)
 prop:reader("password", nil)
 prop:reader("device_id", nil)
-prop:reader("cur_player", nil)
+prop:reader("player", nil)
 prop:reader("players", {})
 
 function Account:__init()
@@ -39,9 +39,9 @@ function Account:close()
         self.client:close()
         self.client = nil
     end
-    if self.cur_player then
-        self.cur_player:close()
-        self.cur_player = nil
+    if self.player then
+        self.player:close()
+        self.player = nil
     end
 end
 
@@ -52,7 +52,7 @@ function Account:has_player()
     return false
 end
 
-function Account:get_player(index)
+function Account:get_player_info(index)
     return self.players[index]
 end
 
@@ -127,7 +127,7 @@ function Account:choose_player(player_id)
     log_debug("[Account][choose_player] res : {}", res)
     local player = Player(self.open_id, self.user_id, res.player_id)
     player:connect(res.gate_ip, res.gate_port, res.lobby_id, res.verify_code)
-    self.cur_player = player
+    self.player = player
     return player
 end
 

@@ -62,4 +62,7 @@ function Player:logout_player(player_id)
     log_info("[Account][logout_player] logout player: {} success!", player_id)
 end
 
+function Player:load_attrs(attrs)
+end
+
 return Player
