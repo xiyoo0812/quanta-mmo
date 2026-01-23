@@ -6,6 +6,9 @@ QUANTA_CLUSTER = 1
 --主机IP
 QUANTA_HOST_IP = "127.0.0.1"
 
+--登陆服IP
+QUANTA_LOGIN_ADDR = "127.0.0.1"
+
 --企业微信地址
 QUANTA_WECHAT_URL = "https://qyapi.weixin.qq.com/cgi-bin/webhook/send?key=xxxx"
 

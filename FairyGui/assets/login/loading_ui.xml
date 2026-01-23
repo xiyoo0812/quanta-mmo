@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n1_y6fm" name="bk" src="do1r4" fileName="images/BG1.jpg" pkg="90y9yq7r" xy="4,-1" size="1920,1080" group="n8_y6fm">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n7_y6fm" name="title" xy="467,859" size="985,42" group="n8_y6fm" fontSize="30" color="#f2f2f2" vAlign="middle" autoSize="none" text="正在更新文件...">
+      <relation target="" sidePair="center-center,top-bottom%"/>
+    </text>
+    <image id="n10_s2vo" name="n10" src="udlw3" fileName="images/UI_Login_Img_Carriage_1.png" pkg="90y9yq7r" xy="1692,900" group="n8_y6fm">
+      <relation target="" sidePair="right-right,bottom-bottom"/>
+    </image>
+    <component id="n11_udlw" name="progress" src="olqi4w" fileName="widget/progress/progress1.xml" pkg="9i7luk0q" xy="144,917" size="1540,35" group="n8_y6fm">
+      <relation target="" sidePair="center-center,bottom-bottom%"/>
+      <ProgressBar value="50" max="100"/>
+    </component>
+    <group id="n8_y6fm" name="n8" xy="4,-1" size="1920,1080"/>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1" frameRate="60"/>
+</component>

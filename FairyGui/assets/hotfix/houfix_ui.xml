@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="1920,1080">
+  <displayList>
+    <image id="n1_y6fm" name="bk" src="do1r4" fileName="images/BG1.jpg" xy="0,0" size="1920,1080">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n7_y6fm" name="title" xy="192,845" size="1099,42" fontSize="30" color="#f2f2f2" vAlign="middle" autoSize="none" autoClearText="true" text="正在更新文件...">
+      <relation target="" sidePair="center-center,bottom-bottom"/>
+    </text>
+    <image id="n10_s2vo" name="n10" src="udlw3" fileName="images/UI_Login_Img_Carriage_1.png" xy="1688,885">
+      <relation target="" sidePair="right-right%,bottom-bottom%"/>
+    </image>
+    <component id="n12_nnso" name="n12" src="udlw2" fileName="progressbar.xml" xy="192,903" size="1492,32">
+      <relation target="" sidePair="width-width%,center-center,bottom-bottom"/>
+      <ProgressBar value="50" max="100"/>
+    </component>
+  </displayList>
+  <transition name="t0" autoPlay="true" autoPlayRepeat="-1" frameRate="60"/>
+</component>

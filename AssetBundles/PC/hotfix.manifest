@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 184116874
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 8e62f5c2b88afcd6efccdecba2bc699e
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: deaf5b7fe83e1a31de382f7fed810e72
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 8e62f5c2b88afcd6efccdecba2bc699e
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/FairyGUI/hotfix_atlas0.png
+- Assets/Resources/FairyGUI/hotfix_fui.bytes
+Dependencies: []

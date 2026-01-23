@@ -1,0 +1,23 @@
+ManifestFileVersion: 0
+CRC: 2302957413
+Hashes:
+  AssetFileHash:
+    serializedVersion: 2
+    Hash: 93ffa9678e40e54ab4983bf6d3e6d1f0
+  TypeTreeHash:
+    serializedVersion: 2
+    Hash: deaf5b7fe83e1a31de382f7fed810e72
+  IncrementalBuildHash:
+    serializedVersion: 2
+    Hash: 93ffa9678e40e54ab4983bf6d3e6d1f0
+HashAppended: 0
+ClassTypes:
+- Class: 28
+  Script: {instanceID: 0}
+- Class: 49
+  Script: {instanceID: 0}
+SerializeReferenceClassIdentifiers: []
+Assets:
+- Assets/Resources/FairyGUI/widget_fui.bytes
+- Assets/Resources/FairyGUI/widget_atlas0.png
+Dependencies: []

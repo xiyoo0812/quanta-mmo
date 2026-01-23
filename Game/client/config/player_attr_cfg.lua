@@ -22,7 +22,7 @@ player_attr:upsert({
 })
 
 player_attr:upsert({
-    key='ATTR_STAMINA',
+    key='ATTR_ANGER',
     range=1,
     save=true,
     share=false
@@ -50,7 +50,7 @@ player_attr:upsert({
 })
 
 player_attr:upsert({
-    key='ATTR_STAMINA_MAX',
+    key='ATTR_ANGER_MAX',
     range=1,
     save=false,
     share=false
@@ -106,13 +106,6 @@ player_attr:upsert({
 })
 
 player_attr:upsert({
-    key='ATTR_CUSTOM',
-    range=16,
-    save=false,
-    share=false
-})
-
-player_attr:upsert({
     key='ATTR_VERSION',
     range=0,
     save=true,
@@ -141,15 +134,22 @@ player_attr:upsert({
 })
 
 player_attr:upsert({
-    key='ATTR_CRITICAL_RATE',
+    key='ATTR_CRIT_RATE',
     range=1,
     save=false,
     share=false
 })
 
 player_attr:upsert({
-    key='ATTR_CRITICAL_HURT',
+    key='ATTR_CRIT_HURT',
     range=1,
+    save=false,
+    share=false
+})
+
+player_attr:upsert({
+    key='ATTR_LOGIN_TIME',
+    range=0,
     save=false,
     share=false
 })
@@ -240,13 +240,6 @@ player_attr:upsert({
 
 player_attr:upsert({
     key='ATTR_LINE',
-    range=0,
-    save=false,
-    share=false
-})
-
-player_attr:upsert({
-    key='ATTR_LOGIN_TIME',
     range=0,
     save=false,
     share=false
