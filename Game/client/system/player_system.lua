@@ -1,6 +1,6 @@
 --player_system.lua
 
-local log_info          = logger.info
+local log_debug          = logger.debug
 
 local my_account        = quanta.get("my_account")
 local protobuf_mgr      = quanta.get("protobuf_mgr")
@@ -14,7 +14,7 @@ end
 
 -- 会话需要关闭
 function PlayerSystem:on_entity_attr_update_ntf(session, message, body)
-    log_info("[PlayerSystem][on_entity_attr_update_ntf] body({})", body)
+    log_debug("[PlayerSystem][on_entity_attr_update_ntf] body({})", body)
     local player = my_account:get_player()
     if player then
         player:load_attrs(body.attrs)

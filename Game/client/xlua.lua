@@ -2,7 +2,6 @@
 import("kernel.lua")
 
 quanta.startup(function()
-    import("entity/account.lua")
-    import("core/window_mgr.lua")
+    import("client.lua")
     quanta.window_mgr:open_gui("login_ui")
 end)
