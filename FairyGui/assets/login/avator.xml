@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="600,650" extention="Button">
+  <controller name="button" pages="0,up,1,down,2,over,3,selectedOver" selected="0"/>
+  <controller name="gender" exported="true" pages="0,male,1,female" selected="0"/>
+  <controller name="nameable" exported="true" pages="0,disable,1,enable" selected="0"/>
+  <displayList>
+    <image id="n4_do1r" name="n4" src="aw785" fileName="images/1.png" xy="0,0" size="600,650">
+      <gearDisplay controller="gender" pages="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <image id="n5_do1r" name="0" src="aw786" fileName="images/2.png" xy="0,0" size="600,650">
+      <gearDisplay controller="gender" pages="1"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n6_do1r" name="title" xy="-1,649" size="600,63" fontSize="40" color="#ffffff" align="center" autoSize="none" autoClearText="true" text="西门吹雪">
+      <gearDisplay controller="nameable" pages="1"/>
+      <relation target="" sidePair="width-width%,height-height%,topext-bottom"/>
+    </text>
+    <image id="n7_do1r" name="n7" src="udlw6d" fileName="box/UI_Common_Img_SelectedR0_1.png" pkg="9i7luk0q" xy="0,0" size="600,650" color="#ff0000">
+      <gearDisplay controller="button" pages="1,3"/>
+      <gearDisplay2 controller="nameable" pages="1" condition="0"/>
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+  </displayList>
+  <Button mode="Check"/>
+</component>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<component size="200,64" extention="Label">
+  <displayList>
+    <image id="n1_v1sh" name="n1" src="v1sh3a" fileName="box/UI_Common_Img_Pitchon_1.png" xy="0,0" size="200,64">
+      <relation target="" sidePair="width-width,height-height"/>
+    </image>
+    <text id="n0_v1sh" name="title" xy="7,0" size="186,64" fontSize="20" color="#330033" vAlign="middle" autoSize="none" singleLine="true" autoClearText="true" text="测试" input="true">
+      <relation target="" sidePair="width-width,height-height"/>
+    </text>
+  </displayList>
+</component>

@@ -29,11 +29,11 @@ attribute:upsert({
 
 attribute:upsert({
     complex=false,
-    enum_key='ATTR_STAMINA',
+    enum_key='ATTR_ANGER',
     id=3,
     increase=true,
-    limit='ATTR_STAMINA_MAX',
-    nick='stamina',
+    limit='ATTR_ANGER_MAX',
+    nick='anger',
     type='int'
 })
 
@@ -67,10 +67,10 @@ attribute:upsert({
 
 attribute:upsert({
     complex=true,
-    enum_key='ATTR_STAMINA_MAX',
+    enum_key='ATTR_ANGER_MAX',
     id=7,
     increase=true,
-    nick='stamina_max',
+    nick='anger_max',
     type='int'
 })
 
@@ -148,15 +148,6 @@ attribute:upsert({
 
 attribute:upsert({
     complex=false,
-    enum_key='ATTR_CUSTOM',
-    id=16,
-    increase=false,
-    nick='custom',
-    type='bytes'
-})
-
-attribute:upsert({
-    complex=false,
     enum_key='ATTR_VERSION',
     id=17,
     increase=false,
@@ -193,19 +184,19 @@ attribute:upsert({
 
 attribute:upsert({
     complex=false,
-    enum_key='ATTR_CRITICAL_RATE',
+    enum_key='ATTR_CRIT_RATE',
     id=23,
     increase=true,
-    nick='critical_rate',
+    nick='crit_rate',
     type='float'
 })
 
 attribute:upsert({
     complex=false,
-    enum_key='ATTR_CRITICAL_HURT',
+    enum_key='ATTR_CRIT_HURT',
     id=24,
     increase=true,
-    nick='critical_hurt',
+    nick='crit_hurt',
     type='float'
 })
 

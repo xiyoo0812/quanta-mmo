@@ -3,6 +3,7 @@ local type          = type
 local log_err       = logger.err
 local sformat       = string.format
 
+local thread_mgr    = quanta.get("thread_mgr")
 local window_mgr    = quanta.get("window_mgr")
 
 local Window = class()
@@ -80,21 +81,57 @@ function Window:close()
 end
 
 --注册响应事件
-function Window:register_click(child_name, response, widget_name)
+function Window:register_click(child_name, func_name, widget_name)
     local child = self:get_child(child_name, widget_name)
     if child then
-        child.onClick:Add(response)
+        child.onClick:Add(function(...)
+            thread_mgr:fork(self[func_name], nil, self, ...)
+        end)
     end
 end
 
 --注册响应事件
-function Window:register_widget_click(widget, response, child_name)
+function Window:register_widget_click(widget, func_name, child_name)
     local child
     if child_name then
         child = widget:GetChild(child_name)
     end
     child = child or widget
-    child.onClick:Add(response)
+    child.onClick:Add(function(...)
+        thread_mgr:fork(self[func_name], nil, self, ...)
+    end)
+end
+
+--注册响应事件
+function Window:register_changed(child_name, func_name, widget_name)
+    local child = self:get_child(child_name, widget_name)
+    if child then
+        child.onChanged:Add(function(...)
+            thread_mgr:fork(self[func_name], nil, self, ...)
+        end)
+    end
+end
+
+--注册响应事件
+function Window:register_widget_changed(widget, func_name, child_name)
+    local child
+    if child_name then
+        child = widget:GetChild(child_name)
+    end
+    child = child or widget
+    child.onChanged:Add(function(...)
+        thread_mgr:fork(self[func_name], nil, self, ...)
+    end)
+end
+
+--注册响应事件
+function Window:register_controler_changed(ctrl_name, func_name, widget_name)
+    local controller = self:get_controller(ctrl_name, widget_name)
+    if controller then
+        controller.onChanged:Add(function(...)
+            thread_mgr:fork(self[func_name], nil, self, ...)
+        end)
+    end
 end
 
 --获取子窗口
@@ -127,7 +164,7 @@ end
 function Window:get_controller_status(ctrl_name, widget_name)
     local controller = self:get_controller(ctrl_name, widget_name)
     if controller then
-        return controller:GetSelectedIndex()
+        return controller.selectedIndex
     end
     return 0
 end

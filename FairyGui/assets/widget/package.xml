@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="9i7luk0q">
+  <resources>
+    <image id="v1sh0" name="UI_Common_Btn_Arrow_1.png" path="/arrow/" exported="true"/>
+    <image id="v1sh1" name="UI_Common_Img_Close_1.png" path="/button/" exported="true"/>
+    <image id="v1sh2" name="UI_Common_Img_Close_2.png" path="/button/" exported="true"/>
+    <image id="v1sh3" name="UI_Backpack_Img_Itemadd_2.png" path="/frame/" exported="true"/>
+    <image id="v1sh4" name="UI_Backpack_Img_Item_1.png" path="/frame/" exported="true"/>
+    <image id="v1sh5" name="UI_Backpack_Img_Item_2.png" path="/frame/" exported="true"/>
+    <image id="v1sh6" name="UI_Backpack_Img_Item_3.png" path="/frame/" exported="true"/>
+    <image id="v1sh7" name="UI_Common_Btn_Tab_sel.png" path="/button/" exported="true" scale="9grid" scale9grid="19,20,7,10"/>
+    <image id="v1sh8" name="UI_Backpack_Img_Item_4.png" path="/frame/" exported="true" scale="9grid" scale9grid="45,40,69,73"/>
+    <image id="v1sh9" name="UI_Backpack_Img_Item_6.png" path="/frame/" exported="true"/>
+    <image id="v1sha" name="UI_Backpack_Img_Item_7.png" path="/frame/" exported="true"/>
+    <image id="v1shb" name="UI_Backpack_Img_Item_8.png" path="/frame/" exported="true"/>
+    <image id="v1shc" name="UI_Backpack_Img_Item_9.png" path="/frame/" exported="true"/>
+    <image id="v1shd" name="UI_Item_Img_Quality_2.png" path="/frame/" exported="true"/>
+    <image id="v1she" name="UI_Item_Img_Quality_3.png" path="/frame/" exported="true"/>
+    <image id="v1shf" name="UI_Backpack_Img_Item_5.png" path="/frame/" exported="true"/>
+    <image id="v1shg" name="UI_Common_Btn_Tab_nor.png" path="/button/" exported="true" scale="9grid" scale9grid="18,19,11,11"/>
+    <image id="v1shh" name="UI_Common_Btn_Small_sel.png" path="/button/" exported="true" scale="9grid" scale9grid="34,10,68,20"/>
+    <image id="v1shi" name="UI_Common_Btn_Small_nor.png" path="/button/" exported="true" scale="9grid" scale9grid="34,10,68,20"/>
+    <image id="v1shj" name="UI_Common_Btn_Paper1_nor.png" path="/button/" exported="true" scale="9grid" scale9grid="59,24,118,17"/>
+    <image id="v1shk" name="UI_Common_Btn_Paper1_sel.png" path="/button/" exported="true" scale="9grid" scale9grid="59,20,118,18"/>
+    <image id="v1shl" name="UI_Common_Btn_Paper2_nor.png" path="/button/" exported="true" scale="9grid" scale9grid="59,22,118,17"/>
+    <image id="v1shm" name="UI_Common_Btn_Paper2_sel.png" path="/button/" exported="true" scale="9grid" scale9grid="59,23,118,19"/>
+    <image id="v1shn" name="UI_Common_Btn_Paper3_nor.png" path="/button/" exported="true" scale="9grid" scale9grid="59,23,118,19"/>
+    <image id="v1sho" name="UI_Common_Btn_Paper3_sel.png" path="/button/" exported="true" scale="9grid" scale9grid="59,27,118,14"/>
+    <image id="v1shp" name="UI_Common_Btn_Paper4_nor.png" path="/button/" exported="true" scale="9grid" scale9grid="59,21,118,16"/>
+    <image id="v1shq" name="UI_Common_Btn_Paper4_sel.png" path="/button/" exported="true" scale="9grid" scale9grid="59,21,118,22"/>
+    <image id="v1shr" name="UI_Common_Btn_Passive_high.png" path="/button/" exported="true" scale="9grid" scale9grid="69,17,138,34"/>
+    <image id="v1shs" name="UI_Common_Btn_Passive_nor.png" path="/button/" exported="true" scale="9grid" scale9grid="69,17,138,34"/>
+    <image id="v1sht" name="UI_Common_Btn_Passive_pre.png" path="/button/" exported="true" scale="9grid" scale9grid="69,17,138,34"/>
+    <image id="v1shu" name="UI_Common_Btn_Secondary_high.png" path="/button/" exported="true" scale="9grid" scale9grid="69,17,138,34"/>
+    <image id="v1shv" name="UI_Common_Btn_Secondary_nor.png" path="/button/" exported="true" scale="9grid" scale9grid="69,17,138,34"/>
+    <image id="v1shw" name="UI_Common_Btn_Secondary_pre.png" path="/button/" exported="true" scale="9grid" scale9grid="69,17,138,34"/>
+    <image id="v1shx" name="UI_Common_Btn_Small_high.png" path="/button/" exported="true" scale="9grid" scale9grid="34,10,68,20"/>
+    <image id="v1shy" name="UI_Item_Img_Quality_4.png" path="/frame/" exported="true"/>
+    <image id="v1shz" name="UI_Item_Img_Quality_5.png" path="/frame/" exported="true" scale="9grid" scale9grid="122,244,141,42"/>
+    <image id="v1sh10" name="UI_Item_Img_Quality_6.png" path="/frame/" exported="true"/>
+    <image id="v1sh11" name="UI_Item_Img_Quality_8.png" path="/frame/" exported="true"/>
+    <image id="v1sh12" name="UI_Common_Btn_Add_pre.png" path="/slider/" exported="true"/>
+    <image id="v1sh13" name="UI_Common_Btn_Paper_high.png" path="/slider/" exported="true"/>
+    <image id="v1sh14" name="UI_Common_Btn_Paper_nor.png" path="/slider/" exported="true"/>
+    <image id="v1sh15" name="UI_Common_Btn_Paper_pre.png" path="/slider/" exported="true"/>
+    <image id="v1sh16" name="UI_Common_Btn_Verticalslipbig_high.png" path="/slider/" exported="true"/>
+    <image id="v1sh17" name="UI_Common_Btn_Verticalslipbig_nor.png" path="/slider/" exported="true"/>
+    <image id="v1sh18" name="UI_Common_Btn_Verticalslipbig_pre.png" path="/slider/" exported="true"/>
+    <image id="v1sh19" name="UI_Common_Btn_Verticalslip_high.png" path="/slider/" exported="true"/>
+    <image id="v1sh1a" name="UI_Common_Btn_Verticalslip_nor.png" path="/slider/" exported="true"/>
+    <image id="v1sh1b" name="UI_Common_Btn_Verticalslip_pre.png" path="/slider/" exported="true"/>
+    <image id="v1sh1c" name="UI_Common_Img_Verticalslipbig_1.png" path="/slider/" exported="true"/>
+    <image id="v1sh1d" name="UI_Common_Img_Verticalslip_1.png" path="/slider/" exported="true"/>
+    <image id="v1sh1e" name="UI_Common_Img_Title_1.png" path="/title/" exported="true"/>
+    <image id="v1sh1f" name="UI_Common_Img_Title_2.png" path="/title/" exported="true"/>
+    <image id="v1sh1g" name="UI_Common_Img_Title_3.png" path="/title/" exported="true"/>
+    <image id="v1sh1h" name="UI_Common_Btn_Add_nor.png" path="/slider/" exported="true"/>
+    <image id="v1sh1i" name="UI_Common_Btn_Not_pre.png" path="/button/" exported="true" scale="9grid" scale9grid="69,17,138,34"/>
+    <image id="v1sh1j" name="UI_Common_Btn_Add_high.png" path="/slider/" exported="true"/>
+    <image id="v1sh1k" name="UI_Common_Btn_AddP_nor.png" path="/slider/" exported="true"/>
+    <image id="v1sh1l" name="UI_Item_Img_Quality_9.png" path="/frame/" exported="true"/>
+    <image id="v1sh1m" name="UI_Backpack_Img_Lock_1.png" path="/icon/" exported="true"/>
+    <image id="v1sh1n" name="UI_Common_Btn_Explain_nor.png" path="/icon/" exported="true"/>
+    <image id="v1sh1o" name="UI_Common_Btn_Explain_sel.png" path="/icon/" exported="true"/>
+    <image id="v1sh1p" name="UI_Common_Btn_Trace1_nor.png" path="/icon/" exported="true"/>
+    <image id="v1sh1q" name="UI_Common_Btn_Trace1_pre.png" path="/icon/" exported="true"/>
+    <image id="v1sh1r" name="UI_Common_Btn_Trace_nor.png" path="/icon/" exported="true"/>
+    <image id="v1sh1s" name="UI_Common_Btn_Trace_pre.png" path="/icon/" exported="true"/>
+    <image id="v1sh1t" name="UI_Common_Img_Warn_1.png" path="/icon/" exported="true"/>
+    <image id="v1sh1u" name="UI_Common_Img_Warn_2.png" path="/icon/" exported="true"/>
+    <image id="v1sh1v" name="UI_Character_Btn_Slide_1.png" path="/slider/" exported="true"/>
+    <image id="v1sh1w" name="UI_Character_Btn_Slide_2.png" path="/slider/" exported="true"/>
+    <image id="v1sh1x" name="UI_Character_Btn_Slide_3.png" path="/slider/" exported="true"/>
+    <image id="v1sh1y" name="UI_Character_Img_Slide_1.png" path="/slider/" exported="true"/>
+    <image id="v1sh1z" name="UI_Common_Btn_AddP_high.png" path="/slider/" exported="true"/>
+    <image id="v1sh20" name="UI_Common_Btn_AddP_pre.png" path="/slider/" exported="true"/>
+    <image id="v1sh21" name="UI_Common_Btn_Not_nor.png" path="/button/" exported="true" scale="9grid" scale9grid="69,17,138,34"/>
+    <image id="v1sh22" name="UI_Common_Btn_Not_high.png" path="/button/" exported="true" scale="9grid" scale9grid="69,17,138,34"/>
+    <image id="v1sh23" name="UI_Common_Btn_Main_pre.png" path="/button/" exported="true" scale="9grid" scale9grid="69,17,138,34"/>
+    <image id="v1sh24" name="UI_Common_Btn_Key_pre.png" path="/box/" exported="true"/>
+    <image id="v1sh25" name="UI_Common_Btn_Shortcutkey_hold.png" path="/box/" exported="true" scale="9grid" scale9grid="24,22,8,8"/>
+    <image id="v1sh26" name="UI_Common_Btn_Shortcutkey_nor.png" path="/box/" exported="true"/>
+    <image id="v1sh27" name="UI_Common_Btn_Shortcutkey_pre.png" path="/box/" exported="true"/>
+    <image id="v1sh28" name="UI_Common_Btn_Tidyup_dis.png" path="/box/" exported="true"/>
+    <image id="v1sh29" name="UI_Common_Btn_Tidyup_nor.png" path="/box/" exported="true"/>
+    <image id="v1sh2a" name="UI_Common_Btn_Tidyup_pre.png" path="/box/" exported="true"/>
+    <image id="v1sh2b" name="UI_Common_Btn_Tidyup_sel.png" path="/box/" exported="true"/>
+    <image id="v1sh2c" name="UI_Common_Icon_Arrow_1.png" path="/box/" exported="true"/>
+    <image id="v1sh2d" name="UI_Common_Img_Acquisition_1.png" path="/box/" exported="true"/>
+    <image id="v1sh2e" name="UI_Common_Img_Acquisition_2.png" path="/box/" exported="true"/>
+    <image id="v1sh2f" name="UI_Common_Img_Add_1.png" path="/box/" exported="true"/>
+    <image id="v1sh2g" name="UI_Common_Img_Add_1_1.png" path="/box/" exported="true"/>
+    <image id="v1sh2h" name="UI_Common_Img_Ammo_1.png" path="/box/" exported="true"/>
+    <image id="v1sh2i" name="UI_Common_Img_Ammo_2.png" path="/box/" exported="true"/>
+    <image id="v1sh2j" name="UI_Common_Btn_Key_nor.png" path="/box/" exported="true"/>
+    <image id="v1sh2k" name="UI_Common_Img_Borderless_1.png" path="/box/" exported="true"/>
+    <image id="v1sh2l" name="UI_Common_Btn_Key_high.png" path="/box/" exported="true" scale="9grid" scale9grid="11,11,22,22"/>
+    <image id="v1sh2m" name="UI_Character_Img_Select_2.png" path="/box/" exported="true" scale="9grid" scale9grid="28,23,56,1"/>
+    <image id="v1sh2n" name="UI_Common_Btn_Arrow_2_high.png" path="/arrow/" exported="true"/>
+    <image id="v1sh2o" name="UI_Common_Btn_Arrow_2_nor.png" path="/arrow/" exported="true"/>
+    <image id="v1sh2p" name="UI_Common_Btn_Arrow_3.png" path="/arrow/" exported="true"/>
+    <image id="v1sh2q" name="UI_Common_Btn_Arrow_high.png" path="/arrow/" exported="true"/>
+    <image id="v1sh2r" name="UI_Common_Btn_Arrow_nor.png" path="/arrow/" exported="true"/>
+    <image id="v1sh2s" name="UI_Common_Btn_Select_1.png" path="/arrow/" exported="true"/>
+    <image id="v1sh2t" name="UI_Common_Btn_Shortcutkey_high.png" path="/arrow/" exported="true"/>
+    <image id="v1sh2u" name="UI_Common_Img_Arrow_1.png" path="/arrow/" exported="true"/>
+    <image id="v1sh2y" name="UI_Item_Img_Arrow_1.png" path="/arrow/" exported="true"/>
+    <image id="v1sh2z" name="UI_Backpack_Btn_Option_nor.png" path="/box/" exported="true" scale="9grid" scale9grid="12,12,24,24"/>
+    <image id="v1sh30" name="UI_Backpack_Btn_Option_sel.png" path="/box/" exported="true" scale="9grid" scale9grid="12,12,24,24"/>
+    <image id="v1sh31" name="UI_Backpack_Icon_Head_1.png" path="/box/" exported="true"/>
+    <image id="v1sh32" name="UI_Character_Img_Select_3.png" path="/box/" exported="true" scale="9grid" scale9grid="29,12,58,24"/>
+    <image id="v1sh33" name="UI_Common_Img_Title_4.png" path="/title/" exported="true"/>
+    <image id="v1sh34" name="UI_Common_Img_Box4xpR0_2.png" path="/box/" exported="true"/>
+    <image id="v1sh35" name="UI_Common_Img_BoxR0_1.png" path="/box/" exported="true"/>
+    <image id="v1sh36" name="UI_Common_Img_Import_2.png" path="/box/" exported="true" scale="9grid" scale9grid="14,14,28,28"/>
+    <image id="v1sh37" name="UI_Common_Img_Minus_1.png" path="/box/" exported="true"/>
+    <image id="v1sh38" name="UI_Common_Img_Minus_1_1.png" path="/box/" exported="true"/>
+    <image id="v1sh39" name="UI_Common_Img_New_1.png" path="/box/" exported="true"/>
+    <image id="v1sh3a" name="UI_Common_Img_Pitchon_1.png" path="/box/" exported="true" scale="9grid" scale9grid="16,16,32,32"/>
+    <image id="v1sh3b" name="UI_Common_Img_PopUpwindow_1.png" path="/box/" exported="true"/>
+    <image id="v1sh3c" name="UI_Common_Img_PopUpwindow_2.png" path="/box/" exported="true"/>
+    <image id="v1sh3d" name="UI_Common_Img_Selected_1.png" path="/box/" exported="true"/>
+    <image id="v1sh3e" name="UI_Common_Img_Select_1.png" path="/box/" exported="true" scale="9grid" scale9grid="14,14,28,28"/>
+    <image id="v1sh3f" name="UI_Common_Img_Suspension_1.png" path="/box/" exported="true"/>
+    <image id="v1sh3g" name="UI_Common_Img_Suspension_2.png" path="/box/" exported="true"/>
+    <image id="v1sh3h" name="UI_Common_Img_Window_1.png" path="/box/" exported="true"/>
+    <image id="v1sh3i" name="UI_Keyboard_Img_Comm_0.png" path="/box/" exported="true" scale="9grid" scale9grid="16,16,21,21"/>
+    <image id="v1sh3j" name="UI_Common_Btn_Main_high.png" path="/button/" exported="true" scale="9grid" scale9grid="69,17,138,34"/>
+    <image id="v1sh3k" name="UI_Common_Btn_Main_nor.png" path="/button/" exported="true" scale="9grid" scale9grid="69,17,138,34"/>
+    <image id="v1sh3l" name="UI_Common_Img_HalfboxR5_1.png" path="/box/" exported="true"/>
+    <image id="v1sh3m" name="UI_Common_Img_BoxR05_1.png" path="/box/" exported="true"/>
+    <image id="v1sh3n" name="UI_Common_Img_Gradualchange_2.png" path="/box/" exported="true"/>
+    <image id="v1sh3o" name="UI_Common_Img_Floatingwindow_1.png" path="/box/" exported="true" scale="9grid" scale9grid="21,21,42,42"/>
+    <image id="v1sh3p" name="UI_Common_Img_BoxR0_2.png" path="/box/" exported="true"/>
+    <image id="v1sh3q" name="UI_Common_Img_BoxR10_1.png" path="/box/" exported="true"/>
+    <image id="v1sh3r" name="UI_Common_Img_BoxR10_2.png" path="/box/" exported="true"/>
+    <image id="v1sh3s" name="UI_Common_Img_BoxR20_1.png" path="/box/" exported="true"/>
+    <image id="v1sh3t" name="UI_Common_Img_BoxR20_2.png" path="/box/" exported="true"/>
+    <image id="v1sh3u" name="UI_Common_Img_BoxR5_1.png" path="/box/" exported="true"/>
+    <image id="v1sh3v" name="UI_Common_Img_BoxR5_2.png" path="/box/" exported="true"/>
+    <image id="v1sh3w" name="UI_Common_Img_BoxR5_3.png" path="/box/" exported="true"/>
+    <image id="v1sh3x" name="UI_Common_Img_BoxshadowR5_1.png" path="/box/" exported="true"/>
+    <image id="v1sh3y" name="UI_Common_Img_checkbox_1.png" path="/box/" exported="true"/>
+    <image id="v1sh3z" name="UI_Common_Img_checkbox_2.png" path="/box/" exported="true" scale9grid="11,11,22,22"/>
+    <image id="v1sh40" name="UI_Common_Img_check_1.png" path="/box/" exported="true"/>
+    <image id="v1sh41" name="UI_Common_Img_check_2.png" path="/box/" exported="true"/>
+    <image id="v1sh42" name="UI_Common_Img_Circle_1.png" path="/box/" exported="true"/>
+    <image id="v1sh43" name="UI_Common_Img_Circle_2.png" path="/box/" exported="true"/>
+    <image id="v1sh44" name="UI_Common_Img_Gradualchange_1.png" path="/box/" exported="true"/>
+    <image id="v1sh45" name="UI_Common_Img_Title_5.png" path="/title/" exported="true"/>
+    <component id="v1sh46" name="btn_main.xml" path="/widget/button/" exported="true"/>
+    <component id="v1sh47" name="btn_not.xml" path="/widget/button/" exported="true"/>
+    <component id="v1sh48" name="btn_secondary.xml" path="/widget/button/" exported="true"/>
+    <component id="v1sh49" name="btn_small.xml" path="/widget/button/" exported="true"/>
+    <component id="v1sh4a" name="btn_paper2.xml" path="/widget/button/" exported="true"/>
+    <component id="v1sh4b" name="btn_passive.xml" path="/widget/button/" exported="true"/>
+    <component id="v1sh4c" name="btn_paper1.xml" path="/widget/button/" exported="true"/>
+    <component id="v1sh4d" name="btn_paper3.xml" path="/widget/button/" exported="true"/>
+    <component id="v1sh4e" name="btn_paper4.xml" path="/widget/button/" exported="true"/>
+    <component id="v1sh4f" name="btn_close1.xml" path="/widget/button/" exported="true"/>
+    <component id="v1sh4g" name="btn_close2.xml" path="/widget/button/" exported="true"/>
+    <component id="v1sh4h" name="btn_tab.xml" path="/widget/button/" exported="true"/>
+    <component id="v1sh4i" name="editbox1.xml" path="/widget/editbox/" exported="true"/>
+    <component id="v1sh4j" name="editbox2.xml" path="/widget/editbox/" exported="true"/>
+    <component id="v1sh4k" name="editbox3.xml" path="/widget/editbox/" exported="true"/>
+    <component id="v1sh4l" name="editbox4.xml" path="/widget/editbox/" exported="true"/>
+    <component id="v1sh4m" name="editbox5.xml" path="/widget/editbox/" exported="true"/>
+    <component id="v1sh4o" name="checkbox1.xml" path="/widget/checkbox/" exported="true"/>
+    <component id="v1sh4p" name="checkbox2.xml" path="/widget/checkbox/" exported="true"/>
+    <component id="v1sh4q" name="checkbox3.xml" path="/widget/checkbox/" exported="true"/>
+    <component id="v1sh4r" name="checkbox4.xml" path="/widget/checkbox/" exported="true"/>
+    <image id="olqi4s" name="progress_back.png" path="/progress/" scale="9grid" scale9grid="13,11,167,22"/>
+    <image id="olqi4t" name="progress_fill_green.png" path="/progress/" scale="9grid" scale9grid="11,11,168,22"/>
+    <image id="olqi4u" name="progress_fill_red.png" path="/progress/"/>
+    <image id="olqi4v" name="progress_fill_yellow.png" path="/progress/"/>
+    <component id="olqi4w" name="progress1.xml" path="/widget/progress/" exported="true"/>
+    <image id="udlw4x" name="UI_Map_Img_Triangle_1.png" path="/arrow/"/>
+    <image id="udlw4y" name="UI_Common_Img_NavigationbaBg_1.png" path="/navigation/"/>
+    <image id="udlw4z" name="UI_Common_Img_Choose_3.png" path="/navigation/"/>
+    <image id="udlw50" name="UI_System_Img_Information_2.png" path="/listitem/"/>
+    <image id="udlw51" name="UI_System_Img_Information_1.png" path="/listitem/"/>
+    <image id="udlw52" name="UI_System_Img_Escbox_3.png" path="/listitem/"/>
+    <image id="udlw53" name="UI_System_Img_Escbox_2.png" path="/listitem/"/>
+    <image id="udlw54" name="UI_Order_Img_Cell_2.png" path="/listitem/"/>
+    <image id="udlw55" name="UI_Common_Img_Navigationbal_Sel.png" path="/navigation/"/>
+    <image id="udlw56" name="UI_Order_Img_Cell_1.png" path="/listitem/"/>
+    <image id="udlw57" name="UI_Login_Img_Roomsel_1.png" path="/listitem/"/>
+    <image id="udlw58" name="UI_Login_Img_Roombanner_1.png" path="/listitem/"/>
+    <image id="udlw59" name="UI_Login_Img_Banner_3.png" path="/listitem/"/>
+    <image id="udlw5a" name="UI_Construction_Img_Title_1.png" path="/listitem/"/>
+    <image id="udlw5b" name="UI_Construction_Img_Grid_nor.png" path="/listitem/"/>
+    <image id="udlw5c" name="UI_Construction_Img_Grid_high.png" path="/listitem/"/>
+    <image id="udlw5d" name="UI_Construction_Img_Gridbox_nor.png" path="/listitem/"/>
+    <image id="udlw5e" name="UI_Login_Img_Roomsel_2.png" path="/listitem/"/>
+    <image id="udlw5f" name="UI_Construction_Img_Gridbox_high.png" path="/listitem/"/>
+    <image id="udlw5g" name="UI_Common_Img_Navigationba_Sel.png" path="/navigation/"/>
+    <image id="udlw5h" name="UI_Login_Img_line_1.png" path="/navigation/"/>
+    <image id="udlw5i" name="UI_Order_Img_Progressbar_1.png" path="/title/"/>
+    <image id="udlw5j" name="UI_Order_Img_Name_3.png" path="/title/"/>
+    <image id="udlw5k" name="UI_Order_Img_Name_2.png" path="/title/"/>
+    <image id="udlw5l" name="UI_Order_Img_Make_1.png" path="/title/"/>
+    <image id="udlw5m" name="UI_Map_Img_Name_2.png" path="/title/"/>
+    <image id="udlw5n" name="UI_Map_Img_Name_1.png" path="/title/"/>
+    <image id="udlw5o" name="UI_Login_Img_Link_1.png" path="/title/"/>
+    <image id="udlw5p" name="UI_Login_ImgSsegmentation_1.png" path="/navigation/"/>
+    <image id="udlw5q" name="UI_Item_Img_Tag_3.png" path="/title/"/>
+    <image id="udlw5r" name="UI_Item_Img_Tag_1.png" path="/title/"/>
+    <image id="udlw5s" name="UI_Construction_Img_Banner_3.png" path="/title/"/>
+    <image id="udlw5t" name="UI_Common_Img_Slide_2.png" path="/slider/"/>
+    <image id="udlw5u" name="UI_Common_Img_Slide_1.png" path="/slider/"/>
+    <image id="udlw5v" name="UI_Photograph_Img_Line_1.png" path="/navigation/"/>
+    <image id="udlw5w" name="UI_Map_Img_Wire_1.png" path="/navigation/"/>
+    <image id="udlw5x" name="UI_Login_Img_Ssegmentation_1.png" path="/navigation/"/>
+    <image id="udlw5y" name="UI_Item_Img_Tag_2.png" path="/title/"/>
+    <image id="udlw5z" name="UI_Construction_Img_Directionbottom_pre.png" path="/listitem/"/>
+    <image id="udlw60" name="UI_Login_Img_Banner_1.png" path="/frame/"/>
+    <image id="udlw61" name="UI_System_Btn_Modulation_pre.png" path="/button/"/>
+    <image id="udlw62" name="UI_Common_Btn_ComredR_Pre.png" path="/button/"/>
+    <image id="udlw63" name="UI_Common_Btn_ComredR_nor.png" path="/button/"/>
+    <image id="udlw64" name="UI_Common_Btn_ComredR_high.png" path="/button/"/>
+    <image id="udlw65" name="UI_Common_Btn_Comnot_nor.png" path="/button/"/>
+    <image id="udlw66" name="UI_Common_Btn_ComnotY_nor.png" path="/button/"/>
+    <image id="udlw67" name="UI_Storagebox_Btn_Classification_pre.png" path="/box/"/>
+    <image id="udlw68" name="UI_Storagebox_Btn_Classification_nor.png" path="/box/" exported="true" scale="9grid" scale9grid="14,14,28,28"/>
+    <image id="udlw69" name="UI_Common_Btn_Comred_high.png" path="/button/"/>
+    <image id="udlw6a" name="UI_Item_Img_Head_1.png" path="/box/"/>
+    <image id="udlw6b" name="UI_Common_Img_SelectedR5_1.png" path="/box/" exported="true"/>
+    <image id="udlw6c" name="UI_Common_Img_SelectedR15_1.png" path="/box/" exported="true"/>
+    <image id="udlw6d" name="UI_Common_Img_SelectedR0_1.png" path="/box/" exported="true" scale="9grid" scale9grid="15,15,30,30"/>
+    <image id="udlw6e" name="UI_Common_Img_Anglerounded_3.png" path="/box/"/>
+    <image id="udlw6f" name="UI_Common_Img_Anglerounded_2.png" path="/box/"/>
+    <image id="udlw6g" name="UI_Common_Img_Anglerounded_1.png" path="/box/"/>
+    <image id="udlw6h" name="UI_Map_Img_Triangle_2.png" path="/arrow/"/>
+    <image id="udlw6i" name="UI_Item_Img_Background_5.png" path="/box/"/>
+    <image id="udlw6j" name="UI_Common_Btn_Comred_nor.png" path="/button/"/>
+    <image id="udlw6k" name="UI_Common_Btn_Comred_pre.png" path="/button/"/>
+    <image id="udlw6l" name="UI_Common_Btn_ComsedR_high.png" path="/button/"/>
+    <image id="udlw6m" name="UI_System_Btn_Modulation_nor.png" path="/button/"/>
+    <image id="udlw6n" name="UI_System_Btn_Invitation_pre.png" path="/button/"/>
+    <image id="udlw6o" name="UI_System_Btn_Invitation_nor.png" path="/button/"/>
+    <image id="udlw6p" name="UI_Login_Btn_Agreement_pre.png" path="/button/"/>
+    <image id="udlw6q" name="UI_Login_Btn_Agreement_nor.png" path="/button/"/>
+    <image id="udlw6r" name="UI_Login_Btn_Agreement_high.png" path="/button/"/>
+    <image id="udlw6s" name="UI_Common_Btn_ModulationR_Pre.png" path="/button/"/>
+    <image id="udlw6t" name="UI_Common_Btn_ModulationR_nor.png" path="/button/"/>
+    <image id="udlw6u" name="UI_Common_Btn_ModulationR_high.png" path="/button/"/>
+    <image id="udlw6v" name="UI_Common_Btn_Com_pre.png" path="/button/"/>
+    <image id="udlw6w" name="UI_Common_Btn_Com_nor.png" path="/button/"/>
+    <image id="udlw6x" name="UI_Common_Btn_Com_high.png" path="/button/"/>
+    <image id="udlw6y" name="UI_Common_Btn_Comsed_pre.png" path="/button/"/>
+    <image id="udlw6z" name="UI_Common_Btn_Comsed_nor.png" path="/button/"/>
+    <image id="udlw70" name="UI_Common_Btn_Comsed_high.png" path="/button/"/>
+    <image id="udlw71" name="UI_Common_Btn_ComsedR_pre.png" path="/button/"/>
+    <image id="udlw72" name="UI_Common_Btn_ComsedR_nor.png" path="/button/"/>
+    <image id="udlw73" name="UI_Photograph_Img_Sel_1.png" path="/title/"/>
+    <image id="udlw74" name="UI_Photograph_Img_Title_1.png" path="/title/"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>

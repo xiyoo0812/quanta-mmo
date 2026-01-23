@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<packageDescription id="9tgfnqvn">
+  <resources>
+    <image id="v1sh0" name="UI_Login_Bg_1.png" path="/images/" exported="true"/>
+    <image id="v1sh2" name="advice.png" path="/images/" exported="true"/>
+    <component id="v1sh3" name="login_ui.xml" path="/" exported="true"/>
+    <component id="aw784" name="char_ui.xml" path="/" exported="true"/>
+    <image id="aw785" name="1.png" path="/images/" exported="true"/>
+    <image id="aw786" name="2.png" path="/images/" exported="true"/>
+    <image id="aw78a" name="bg.jpg" path="/images/" exported="true"/>
+    <component id="aw78b" name="btn_dance.xml" path="/" exported="true"/>
+    <image id="aw78c" name="dice.png" path="/images/" exported="true"/>
+    <component id="do1re" name="avator.xml" path="/" exported="true"/>
+    <component id="nnsof" name="loading_ui.xml" path="/" exported="true"/>
+  </resources>
+  <publish name=""/>
+</packageDescription>
