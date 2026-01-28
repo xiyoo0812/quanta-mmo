@@ -27,5 +27,5 @@ include_files = {
     "quanta/server/*",
     "quanta/tools/*/*.lua"
 }
-ignore = {"143", "212", "213", "512"}
+ignore = {"143", "212", "213", "512", "561"}
 
